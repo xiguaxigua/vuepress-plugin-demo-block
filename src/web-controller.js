@@ -12,6 +12,7 @@ export default function webController() {
   const nodes = $(document, CLASS_WRAPPER, true)
   nodes.length &&
     nodes.forEach(node => {
+      if (node.dataset.created === 'true') return
       const codeNode = $(node, CLASS_CODE)
       const footerNode = $(node, CLASS_FOOTER)
       const appNode = $(node, CLASS_APP)
@@ -27,6 +28,7 @@ export default function webController() {
       )
       detail.css && injectCss(detail.css)
       new window.Vue(Object.assign({ el: appNode }, detail.script))
+      node.dataset.created = 'true'
     })
 }
 

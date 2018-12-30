@@ -59,7 +59,7 @@ export const getVueDetail = code => {
 }
 export const injectCss = css => {
   if (_once[css]) return
-  const style = create('style', { innerHTML: css })
+  const style = h('style', { innerHTML: css })
   document.body.appendChild(style)
-  _once[str] = true
+  _once[css] = true
 }

@@ -5,7 +5,7 @@
 ::: demo
 ```html
 <template>
-  <div>{{ message }}</div>
+  <div class="box">{{ message }}</div>
 </template>
 <script>
 export default {
@@ -16,5 +16,10 @@ export default {
   }
 }
 </script>
+<style>
+.box {
+  color: red;
+}
+</style>
 ```
 :::
