@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-demo-block",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "demo block for vuepress both support vue and react",
   "main": "index.js",
   "scripts": {
