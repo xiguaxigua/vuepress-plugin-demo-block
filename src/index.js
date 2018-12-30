@@ -14,7 +14,8 @@ export default {
   extendMarkdown: md => {
     md.use(require('markdown-it-container'), 'demo', {
       render: (tokens, idx) => {
-        if (tokens[idx].nesting === -1) {
+        const { nesting, info } = tokens[idx]
+        if (nesting === -1) {
           return `
             </div>
             <div class="${CLASS_FOOTER}"></div>
@@ -23,6 +24,7 @@ export default {
         }
         let codeStr = ''
         let configStr = ''
+        let typeStr = ~info.indexOf('react') ? 'react' : 'vue'
         for (let i = idx; i < tokens.length; i++) {
           const { type, content, info } = tokens[i]
           if (type === END_TYPE) break
@@ -39,6 +41,7 @@ export default {
           <div
             class="${CLASS_WRAPPER}"
             data-config="${configStr}"
+            data-type="${typeStr}"
             data-code="${codeStr}">
               <div class="${CLASS_DISPLAY}">
                 <div class="${CLASS_APP}"></div>

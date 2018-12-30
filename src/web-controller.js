@@ -1,4 +1,4 @@
-import { h, $, getVueDetail, injectCss, getSettings } from './utils'
+import { h, $, detailController, injectCss, getSettings } from './utils'
 import {
   CLASS_WRAPPER,
   CLASS_CODE,
@@ -23,9 +23,10 @@ export default function webController() {
 
       const code = decodeURIComponent(node.dataset.code)
       let config = decodeURIComponent(node.dataset.config)
+      let type = decodeURIComponent(node.dataset.type)
       config = config ? JSON.parse(config) : {}
       const height = codeNode.querySelector('div').clientHeight
-      const detail = getVueDetail(code, config)
+      const detail = detailController[type](code, config)
       const expandNode = createExpandNode()
       footerNode.appendChild(expandNode)
       expandNode.addEventListener(
@@ -39,7 +40,11 @@ export default function webController() {
         footerNode.appendChild(codepen(detail))
       }
       detail.css && injectCss(detail.css)
-      new window.Vue(Object.assign({ el: appNode }, detail.script))
+      if (type === 'vue') {
+        new window.Vue(Object.assign({ el: appNode }, detail.script))
+      } else {
+        ReactDOM.render(React.createElement(detail.js), appNode)
+      }
       node.dataset.created = 'true'
     })
 }

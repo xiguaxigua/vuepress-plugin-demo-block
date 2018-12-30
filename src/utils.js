@@ -2,7 +2,7 @@ import { DEFAULT_SETTINGS, SETTINGS_KEY } from './constants'
 
 const _once = {}
 
-const getVueHtmlTpl = html => `<div id="app">
+const getHtmlTpl = html => `<div id="app">
 ${html}
 </div>`
 
@@ -40,7 +40,7 @@ export const $ = (parent, node, returnArray) => {
   return result.length === 1 && !returnArray ? result[0] : result
 }
 
-export const getVueScript = (js, html) => {
+const getVueScript = (js, html) => {
   const scripts = js.split('export default')
   const scriptStrOrg = `(function() {${scripts[0]} ; return ${scripts[1]}})()`
   const scriptStr = window.Babel
@@ -51,7 +51,7 @@ export const getVueScript = (js, html) => {
   return scriptObj
 }
 
-export const getVueDetail = (code, config) => {
+const getVueDetail = (code, config) => {
   const cssBlock = code.match(/<style>([\s\S]+)<\/style>/)
   const htmlBlock = code.match(/<template>([\s\S]+)<\/template>/)
   const jsBlock = code.match(/<script>([\s\S]+)<\/script>/)
@@ -62,12 +62,48 @@ export const getVueDetail = (code, config) => {
     jsLib: config.jsLib || [],
     cssLib: config.cssLib || []
   }
-  result.htmlTpl = getVueHtmlTpl(result.html)
+  result.htmlTpl = getHtmlTpl(result.html)
   result.jsTpl = getVueJsTpl(result.js)
   result.script = getVueScript(result.js, result.html)
   const vueResource = getSettings('vue')
   result.jsLib.unshift(vueResource)
   return result
+}
+
+const getReactTpl = code => {
+  code = code
+    .replace('export default ', '')
+    .replace(/App\.__style__(\s*)=(\s*)`([\s\S]*)?`/, '')
+  code +=
+    ';ReactDOM.render(React.createElement(App), document.getElementById("app"))'
+  return code
+}
+
+const getReactDetail = (code, config) => {
+  const transform = window.Babel.transform
+  const ins = transform(code, { presets: ['es2015', 'react'] }).code
+  const script = `(function(exports){var module={};module.exports=exports;${ins};return module.exports.__esModule?module.exports.default:module.exports;})({})`
+  const scriptObj = new Function(`return ${script}`)()
+
+  const result = {
+    js: scriptObj,
+    css: scriptObj.__style__,
+    jsLib: config.jsLib || [],
+    cssLib: config.cssLib || [],
+    jsTpl: getReactTpl(code),
+    htmlTpl: getHtmlTpl('')
+  }
+
+  const reactResource = getSettings('react')
+  const reactDOMResource = getSettings('reactDOM')
+  result.jsLib.unshift(reactResource, reactDOMResource)
+
+  return result
+}
+
+export const detailController = {
+  vue: getVueDetail,
+  react: getReactDetail
 }
 
 export const injectCss = css => {

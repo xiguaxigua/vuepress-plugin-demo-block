@@ -2,14 +2,19 @@
 
 ::: demo [react]
 ```js
-export default class demo extends React.Component {
+export default class App extends React.Component {
   constructor (props) {
     super(props)
-    this.state = { message: 'Hello World' }
-  },
+    this.state = { message: 'Hello World1' }
+  }
   render () {
-    return <div>{this.state.message}</div>
+    return <div className="box-react">{this.state.message}</div>
   }
 }
+App.__style__ = `
+.box-react {
+  color: red;
+}   
+`
 ```
 :::

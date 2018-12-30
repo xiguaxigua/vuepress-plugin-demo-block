@@ -21,7 +21,9 @@ export const DEFAULT_SETTINGS = {
   codepenLayout: 'left',
   codepenJsProcessor: 'babel',
   codepenEditors: '101',
-  vue: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js'
+  vue: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js',
+  react: 'https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js',
+  reactDOM: 'https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js',
 }
 
 export const SETTINGS_KEY = '$VUEPRESS_DEMO_BLOCK'
