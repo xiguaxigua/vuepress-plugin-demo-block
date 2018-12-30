@@ -5,7 +5,7 @@
 ::: demo
 ```html
 <template>
-  <div class="box">123{{ message }}</div>
+  <div class="box">{{ message }}</div>
 </template>
 <script>
 export default {

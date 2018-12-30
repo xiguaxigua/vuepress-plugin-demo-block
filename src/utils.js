@@ -51,7 +51,7 @@ const getVueScript = (js, html) => {
   return scriptObj
 }
 
-const getVueDetail = (code, config) => {
+export const getVueDetail = (code, config) => {
   const cssBlock = code.match(/<style>([\s\S]+)<\/style>/)
   const htmlBlock = code.match(/<template>([\s\S]+)<\/template>/)
   const jsBlock = code.match(/<script>([\s\S]+)<\/script>/)
@@ -79,7 +79,7 @@ const getReactTpl = code => {
   return code
 }
 
-const getReactDetail = (code, config) => {
+export const getReactDetail = (code, config) => {
   const transform = window.Babel.transform
   const ins = transform(code, { presets: ['es2015', 'react'] }).code
   const script = `(function(exports){var module={};module.exports=exports;${ins};return module.exports.__esModule?module.exports.default:module.exports;})({})`
@@ -99,11 +99,6 @@ const getReactDetail = (code, config) => {
   result.jsLib.unshift(reactResource, reactDOMResource)
 
   return result
-}
-
-export const detailController = {
-  vue: getVueDetail,
-  react: getReactDetail
 }
 
 export const injectCss = css => {

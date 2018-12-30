@@ -1,11 +1,6 @@
 ## config
 
 ::: demo
-```json
-{
-  "js": ["http://unpkg.com/numerify"]
-}
-```
 ```html
 <template>
   <div>{{ message }}</div>
@@ -19,5 +14,10 @@ export default {
   }
 }
 </script>
+```
+```json
+{
+  "js": ["http://unpkg.com/numerify"]
+}
 ```
 :::
