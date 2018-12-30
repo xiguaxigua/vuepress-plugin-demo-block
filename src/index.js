@@ -22,19 +22,24 @@ export default {
           `
         }
         let codeStr = ''
+        let configStr = ''
         for (let i = idx; i < tokens.length; i++) {
-          const { type, content } = tokens[i]
+          const { type, content, info } = tokens[i]
           if (type === END_TYPE) break
           if (!content) continue
           if (type === 'fence') {
-            codeStr = content
-            break
+            if (info === 'json') {
+              configStr = encodeURIComponent(content)
+            } else {
+              codeStr = encodeURIComponent(content)
+            }
           }
         }
         return `
           <div
             class="${CLASS_WRAPPER}"
-            data-code="${encodeURIComponent(codeStr)}">
+            data-config="${configStr}"
+            data-code="${codeStr}">
               <div class="${CLASS_DISPLAY}">
                 <div class="${CLASS_APP}"></div>
               </div>

@@ -8,6 +8,7 @@ module.exports = {
       'config'
     ]
   },
+  base: '/vuepress-plugin-demo-block/',
   head: [
     ['script', { src: 'https://cdn.jsdelivr.net/npm/react@16.6.3/umd/react.production.min.js' }],
     ['script', { src: 'https://cdn.jsdelivr.net/npm/react-dom@16.6.3/umd/react-dom.production.min.js' }],

@@ -1,5 +1,35 @@
 # Demo Block
 
+## config
+
+::: demo
+```html
+<template>
+  <div class="box">123{{ message }}</div>
+</template>
+<script>
+export default {
+  data () {
+    return {
+      message: 'Hello World'
+    }
+  }
+}
+</script>
+<style>
+.box {
+  color: red;
+}
+</style>
+```
+```json
+{
+  "jsLib": ["https://unpkg.com/v-charts/lib/index.min.js"],
+  "cssLib": ["https://unpkg.com/v-charts/lib/style.min.css"]
+}
+```
+:::
+
 ## default
 
 ::: demo
@@ -11,7 +41,7 @@
 export default {
   data () {
     return {
-      message: 'Hello World'
+      message: 'Hello World1'
     }
   }
 }

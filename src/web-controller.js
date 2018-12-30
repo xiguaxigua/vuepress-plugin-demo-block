@@ -1,31 +1,43 @@
-import { h, $, getVueDetail, injectCss } from './utils'
+import { h, $, getVueDetail, injectCss, getSettings } from './utils'
 import {
   CLASS_WRAPPER,
-  CLASS_DISPLAY,
   CLASS_CODE,
   CLASS_FOOTER,
   CLASS_SHOW_LINK,
+  CLASS_DISPLAY,
   CLASS_APP,
   CLASS_EXPAND
 } from './constants'
+import jsfiddle from './jsfiddle'
+import codepen from './codepen'
+
 export default function webController() {
   const nodes = $(document, CLASS_WRAPPER, true)
   nodes.length &&
     nodes.forEach(node => {
       if (node.dataset.created === 'true') return
       const codeNode = $(node, CLASS_CODE)
+      const displayNode = $(node, CLASS_DISPLAY)
       const footerNode = $(node, CLASS_FOOTER)
-      const appNode = $(node, CLASS_APP)
+      const appNode = $(displayNode, CLASS_APP)
 
       const code = decodeURIComponent(node.dataset.code)
+      let config = decodeURIComponent(node.dataset.config)
+      config = config ? JSON.parse(config) : {}
       const height = codeNode.querySelector('div').clientHeight
-      const detail = getVueDetail(code)
+      const detail = getVueDetail(code, config)
       const expandNode = createExpandNode()
       footerNode.appendChild(expandNode)
       expandNode.addEventListener(
         'click',
         expandHandler.bind(null, expandNode, height, codeNode, footerNode)
       )
+      if (getSettings('jsfiddle')) {
+        footerNode.appendChild(jsfiddle(detail))
+      }
+      if (getSettings('codepen')) {
+        footerNode.appendChild(codepen(detail))
+      }
       detail.css && injectCss(detail.css)
       new window.Vue(Object.assign({ el: appNode }, detail.script))
       node.dataset.created = 'true'
