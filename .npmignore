@@ -1,0 +1,5 @@
+docs
+node_modules
+src
+rollup.config.js
+yarn.lock
