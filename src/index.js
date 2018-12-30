@@ -40,6 +40,7 @@ export default {
         return `
           <div
             class="${CLASS_WRAPPER}"
+            style="display: none;"
             data-config="${configStr}"
             data-type="${typeStr}"
             data-code="${codeStr}">

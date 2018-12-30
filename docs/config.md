@@ -17,7 +17,7 @@ export default {
 ```
 ```json
 {
-  "js": ["http://unpkg.com/numerify"]
+  "jsLib": ["http://unpkg.com/numerify"]
 }
 ```
 :::

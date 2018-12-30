@@ -23,6 +23,8 @@ export default function webController() {
   nodes.length &&
     nodes.forEach(node => {
       if (node.dataset.created === 'true') return
+      node.style.display = 'block'
+
       const codeNode = $(node, CLASS_CODE)
       const displayNode = $(node, CLASS_DISPLAY)
       const footerNode = $(node, CLASS_FOOTER)
