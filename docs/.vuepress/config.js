@@ -11,6 +11,7 @@ module.exports = {
       description: '用于编写 vue 或 react 示例的vuepress插件'
     }
   },
+  ga: 'UA-122325348-1',
   serviceWorker: true,
   themeConfig: {
     repo: 'xiguaxigua/vuepress-plugin-demo-block',
@@ -64,10 +65,7 @@ module.exports = {
       settings: {
         codepen: true
       }
-    }],
-    ['@vuepress/google-analytics', {
-      ga: 'UA-122325348-1'
-    }] 
+    }]
   ]
 }
 function genSidebarConfig (title) {
