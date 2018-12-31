@@ -1,6 +1,6 @@
 # Introduction
 
-The Demo Block is used to help you add vue or react examples when writing a document. When writing component documentation, you usually need to add some related examples to the document. These examples can usually be implemented using JsFiddle or Codepen's Iframe, but the maintenance cost will be relatively high. You can quickly add examples by using Demo Block, and it is very convenient. Modifications.
+The Demo Block is used to help you add vue or react examples when writing a document. When writing component documentation, you usually need to add some related examples to the document. These examples can usually be implemented using JSFiddle or Codepen's Iframe, but the maintenance cost will be relatively high. You can quickly add examples by using Demo Block, and it is very convenient to modify.
 
 ::: tip
 To show how to write the example, the three points used to mark the end of the code section are separated by spaces, and the spaces need to be removed when used.

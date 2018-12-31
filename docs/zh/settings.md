@@ -1,6 +1,6 @@
 # 配置项
 
-插件的配置分为全局配置和组件配置，用于设置插件的样式以及跳转到 Jsfiddle 或 Codepen 后代码的外部依赖。
+插件的配置分为全局配置和组件配置，用于设置插件的样式以及跳转到 JSFiddle 或 Codepen 后代码的外部依赖。
 
 ## 全局配置
 
@@ -15,7 +15,7 @@ plugins: [
       react: 'http://xxx', // 在线示例中的react依赖
       reactDOM: 'http://xxx', // 在线示例中的reactDOM依赖
       jsfiddle: true, // 是否显示 jsfiddle 链接
-      codepen: true // 是否显示 vue 链接
+      codepen: true // 是否显示 codepen 链接
     }
   }],
 }
