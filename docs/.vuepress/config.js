@@ -11,9 +11,11 @@ module.exports = {
       description: '用于编写 vue 或 react 示例的vuepress插件'
     }
   },
+  serviceWorker: true,
   themeConfig: {
     repo: 'xiguaxigua/vuepress-plugin-demo-block',
     editLinks: true,
+    docsDir: 'docs',
     locales: {
       '/': {
         label: 'English',
