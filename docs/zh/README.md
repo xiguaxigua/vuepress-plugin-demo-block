@@ -1,24 +1,24 @@
-# Introduction
+# 简介
 
-The Demo Block is used to help you add vue or react examples when writing a document. When writing component documentation, you usually need to add some related examples to the document. These examples can usually be implemented using JsFiddle or Codepen's Iframe, but the maintenance cost will be relatively high. You can quickly add examples by using Demo Block, and it is very convenient. Modifications.
+Demo Block 用于帮助你在编写文档时增加 vue 或 react 示例。在编写组件文档时，通常需要在文档上增加一些相关的示例，这些示例通常可以使用 JsFiddle 或 Codepen 的 Iframe 实现，但是维护成本会相对比较高，使用 Demo Block 可以快速的增加示例，并且可以很方便的修改。
 
 ::: tip
-To show how to write the example, the three points used to mark the end of the code section are separated by spaces, and the spaces need to be removed when used.
+为了展示如何编写示例, 用于标记代码部分结束的三点增加了空格分隔，使用时需要将空格去除。
 :::
 
-## Install
+## 安装
 
-### install vuepress
+### 安装 vuepress
 
-Reference official document [Vuepress](https://vuepress.vuejs.org)
+参考官方文档 [Vuepress](https://vuepress.vuejs.org)
 
-### install plugin
+### 安装插件
 
 ```
-npm i vuepress-plugin-demo-block --save-dev
+npm i vuepress-plugin-demo-block
 ```
 
-### set vuepress config
+### 配置 vuepress config
 
 config.js
 ```js
@@ -35,9 +35,9 @@ module.exports = {
 }
 ```
 
-## Start
+## 开始使用
 
-Write the following code in the Markdown file:
+在 Markdown 文件中编写以下代码：
 
 ### Vue Demo
 
@@ -55,7 +55,7 @@ export default {
 <style>
 .box-vue { color: red; }
 </style>
-` ` `  <= delete spaces here
+` ` `  <= 删除这里的空格
 :::
 ```
 
@@ -76,9 +76,8 @@ export default {
 :::
 
 ### React Demo
-
 ```js
-::: demo [react]
+::: demo react
 ```js
 export default class App extends React.Component {
   constructor (props) {
@@ -96,11 +95,11 @@ export default class App extends React.Component {
 App.__style__ = `
   .box-react { color: red; }   
 `
-` ` `  <= delete spaces here
+` ` ` <= 删除这里的空格
 :::
 ```
 
-::: demo [react]
+::: demo react
 ```js
 export default class App extends React.Component {
   constructor (props) {

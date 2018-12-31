@@ -1,6 +1,6 @@
-# React Demo
+# React示例
 
-A typical vue example is written in the following format:
+一个典型的 react 示例编写格式如下：
 
 ```js
 ::: demo [react]
@@ -25,9 +25,9 @@ App.__style__ = `
 :::
 ```
 
-It should be noted that for the convenience of parsing, the code needs to put back a Class named `App`, and `App.__style__` will be added to `body` to display the style.
+需要注意的是，为了解析的方便，代码中需要放回一个命名为 `App` 的 Class，`App.__style__`会被加到 `body` 上用于展示样式。
 
-## demo
+## 示例
 
 ```js
 ::: demo [react]
@@ -90,9 +90,9 @@ App.__style__ = `
 ```
 :::
 
-## use other lib
+## 使用其他库
 
-If you want to use other libraries in the code, you can import the umd file of the corresponding library into config.js, and then use it directly in the code.
+在代码中如果要使用其他的库，可以引入对应库的 umd 文件到 config.js 中, 然后在代码里直接使用即可。
 
 ```js
 module.exports = {
