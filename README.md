@@ -11,6 +11,8 @@ The Demo Block is used to help you add vue or react examples when writing a docu
 
 > To show how to write the example, the three points used to mark the end of the code section are separated by spaces, and the spaces need to be removed when used.
 
+![demo](./demo.png)
+
 ## Install
 
 ### install vuepress
