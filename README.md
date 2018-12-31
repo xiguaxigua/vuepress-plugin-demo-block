@@ -1,5 +1,10 @@
 # vuepress-plugin-demo-block
 
+![download](https://img.shields.io/npm/dm/vuepress-plugin-demo-block.svg)
+[![version](https://img.shields.io/npm/v/vuepress-plugin-demo-block.svg)](https://www.npmjs.com/package/vuepress-plugin-demo-block)
+![language](https://img.shields.io/badge/language-javascript-yellow.svg)
+![License](https://img.shields.io/badge/license-MIT-000000.svg)
+
 ## Introduction
 
 The Demo Block is used to help you add vue or react examples when writing a document. When writing component documentation, you usually need to add some related examples to the document. These examples can usually be implemented using JsFiddle or Codepen's Iframe, but the maintenance cost will be relatively high. You can quickly add examples by using Demo Block, and it is very convenient. Modifications.
