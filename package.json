@@ -24,6 +24,7 @@
   "homepage": "https://github.com/xiguaxigua/vuepress-plugin-demo-block#readme",
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
     "autoprefixer": "^9.4.3",
     "less": "^3.9.0",
     "markdown-it-container": "^2.0.0",

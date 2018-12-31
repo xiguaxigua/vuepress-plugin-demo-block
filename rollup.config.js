@@ -11,6 +11,7 @@ export default [
       file: "lib/index.js",
       format: "cjs"
     },
+    external: ['path'],
     plugins: [babel(), common(), resolve()]
   },
   {
