@@ -20,7 +20,9 @@ const getVueJsTpl = js => {
 const toArray = value => Array.prototype.slice.call(value)
 
 export const getSettings = key =>
-  window[SETTINGS_KEY] ? window[SETTINGS_KEY][key] : DEFAULT_SETTINGS[key]
+  window[SETTINGS_KEY] && window[SETTINGS_KEY][key] !== undefined
+    ? window[SETTINGS_KEY][key]
+    : DEFAULT_SETTINGS[key]
 
 export const h = (tag, attrs, children) => {
   const node = document.createElement(tag)

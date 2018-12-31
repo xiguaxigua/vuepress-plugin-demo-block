@@ -8,8 +8,11 @@ import {
   CLASS_FOOTER
 } from './constants'
 
-export default {
+module.exports = (options, context) => ({
   name: 'vuepress-plugin-demo-block',
+  define: {
+    SETTINGS: options.settings || {}
+  },
   clientRootMixin: path.resolve(__dirname, 'clientRootMixin.js'),
   extendMarkdown: md => {
     md.use(require('markdown-it-container'), 'demo', {
@@ -52,4 +55,4 @@ export default {
       }
     })
   }
-}
+})

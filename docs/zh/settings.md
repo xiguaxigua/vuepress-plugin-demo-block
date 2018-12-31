@@ -4,15 +4,20 @@
 
 ## 全局配置
 
+config.js
 ```js
-window.$VUEPRESS_DEMO_BLOCK = {
-  jsLib: ['http://xxx'], // 在线示例(jsfiddle, codepen)中的js依赖
-  cssLib: ['http://xxx'], // 在线示例中的css依赖
-  vue: 'http://xxx', // 在线示例中的vue依赖
-  react: 'http://xxx', // 在线示例中的react依赖
-  reactDOM: 'http://xxx', // 在线示例中的reactDOM依赖
-  jsfiddle: true, // 是否显示 jsfiddle 链接
-  codepen: true // 是否显示 vue 链接
+plugins: [
+  ['demo-block', {
+    settings: {
+      jsLib: ['http://xxx'], // 在线示例(jsfiddle, codepen)中的js依赖
+      cssLib: ['http://xxx'], // 在线示例中的css依赖
+      vue: 'http://xxx', // 在线示例中的vue依赖
+      react: 'http://xxx', // 在线示例中的react依赖
+      reactDOM: 'http://xxx', // 在线示例中的reactDOM依赖
+      jsfiddle: true, // 是否显示 jsfiddle 链接
+      codepen: true // 是否显示 vue 链接
+    }
+  }],
 }
 ```
 

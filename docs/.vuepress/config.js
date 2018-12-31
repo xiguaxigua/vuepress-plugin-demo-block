@@ -60,7 +60,11 @@ module.exports = {
     ['script', { src: 'https://cdn.jsdelivr.net/npm/v-charts/lib/line.min.js' }],
   ],
   plugins: [
-    require('../../lib/index.js'),
+    [require('../../lib/index.js'), {
+      settings: {
+        codepen: true
+      }
+    }],
     ['@vuepress/google-analytics', {
       ga: 'UA-122325348-1'
     }] 

@@ -4,15 +4,20 @@ The configuration of the plugin is divided into a global configuration and a com
 
 ## globel settings
 
+config.js
 ```js
-window.$VUEPRESS_DEMO_BLOCK = {
-  jsLib: ['http://xxx'], // js dependency in the online example (jsfiddle, codepen)
-  cssLib: ['http://xxx'], // css dependency in the online example (jsfiddle, codepen)
-  vue: 'http://xxx', // vue dependency in the online example (jsfiddle, codepen)
-  react: 'http://xxx', // react dependency in the online example (jsfiddle, codepen)
-  reactDOM: 'http://xxx', // reactDOM dependency in the online example (jsfiddle, codepen)
-  jsfiddle: true, // Whether to display the jsfiddle link
-  codepen: true // Whether to display the codepen link
+plugins: [
+  ['demo-block', {
+    settings: {
+      jsLib: ['http://xxx'], // js dependency in the online example (jsfiddle, codepen)
+      cssLib: ['http://xxx'], // css dependency in the online example (jsfiddle, codepen)
+      vue: 'http://xxx', // vue dependency in the online example (jsfiddle, codepen)
+      react: 'http://xxx', // react dependency in the online example (jsfiddle, codepen)
+      reactDOM: 'http://xxx', // reactDOM dependency in the online example (jsfiddle, codepen)
+      jsfiddle: true, // Whether to display the jsfiddle link
+      codepen: true // Whether to display the codepen link
+    }
+  }],
 }
 ```
 
