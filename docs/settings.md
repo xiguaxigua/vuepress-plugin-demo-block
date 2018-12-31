@@ -2,7 +2,7 @@
 
 The configuration of the plugin is divided into a global configuration and a component configuration, which is used to set the style of the plugin and the external dependencies of the code after jumping to Jsfiddle or Codepen.
 
-## 全局配置
+## globel settings
 
 ```js
 window.$VUEPRESS_DEMO_BLOCK = {
@@ -16,7 +16,7 @@ window.$VUEPRESS_DEMO_BLOCK = {
 }
 ```
 
-## 组件配置
+## component settings
 
 ```html
 ::: demo
