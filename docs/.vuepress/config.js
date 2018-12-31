@@ -59,6 +59,8 @@ module.exports = {
     ['script', { src: 'https://cdn.jsdelivr.net/npm/numerify/lib/index.umd.min.js' }],
     ['script', { src: 'https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js' }],
     ['script', { src: 'https://cdn.jsdelivr.net/npm/v-charts/lib/line.min.js' }],
+    ['script', { src: 'https://www.googletagmanager.com/gtag/js?id=UA-122325348-1' }],
+    ['script', { src: '/ga.js' }],
   ],
   plugins: [
     [require('../../lib/index.js'), {
