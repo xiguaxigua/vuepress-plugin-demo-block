@@ -92,7 +92,7 @@ App.__style__ = `
 
 ## 使用其他库
 
-在代码中如果要使用其他的库，可以引入对应库的 umd 文件到 config.js 中, 然后在代码里直接使用即可。
+在代码中如果要使用其他的库，可以引入对应库的 umd 文件到 config.js 中, 然后在代码里直接使用即可。为了能够在在线示例（JSFiddle, Codepen）中正常访问到资源，需要配置 jsLib或cssLib到组件配置或全局配置中（具体配置参考settings）。
 
 ```js
 module.exports = {
@@ -154,6 +154,11 @@ export default class App extends React.Component {
   }
 }
 ` ` `  <= delete spaces here
+` ` `json
+{
+  "jsLib": ["https://cdn.jsdelivr.net/npm/numerify/lib/index.umd.min.js"]
+}
+` ` `
 :::
 ```
 
@@ -199,6 +204,11 @@ export default class App extends React.Component {
       </div>
     )
   }
+}
+```
+```json
+{
+  "jsLib": ["https://cdn.jsdelivr.net/npm/numerify/lib/index.umd.min.js"]
 }
 ```
 :::

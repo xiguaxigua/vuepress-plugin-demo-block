@@ -76,7 +76,7 @@ export default {
 
 ## use other lib
 
-If you want to use other libraries in the code, you can import the umd file of the corresponding library into config.js, and then use it directly in the code.
+If you want to use other libraries in the code, you can import the umd file of the corresponding library into config.js, and then use it directly in the code. At the same time, in order to be able to access resources in the online example (JSFiddle, Codepen), you need to configure jsLib or cssLib to the component configuration or global configuration (specific configuration reference settings)
 
 ```js
 module.exports = {
@@ -105,7 +105,7 @@ module.exports = {
 </template>
 
 <script>
-export default  {
+export default {
   data: function () {
     return {
       num: '123456.7000',
@@ -120,6 +120,11 @@ export default  {
 }
 </script>
 ` ` `  <= delete spaces here
+` ` `json
+{
+  "jsLib": ["https://cdn.jsdelivr.net/npm/numerify/lib/index.umd.min.js"]
+}
+` ` `
 :::
 ```
 
@@ -134,7 +139,7 @@ export default  {
 </template>
 
 <script>
-export default  {
+export default {
   data: function () {
     return {
       num: '123456.7000',
@@ -148,6 +153,11 @@ export default  {
   }
 }
 </script>
+```
+```json
+{
+  "jsLib": ["https://cdn.jsdelivr.net/npm/numerify/lib/index.umd.min.js"]
+}
 ```
 :::
 
@@ -165,7 +175,7 @@ Rendering other components is basically the same as above.
 </template>
 
 <script>
-export default  {
+export default {
   components: { VeLine: window.VeLine },
   data: function () {
     return {
@@ -185,6 +195,14 @@ export default  {
 }
 </script>
 ` ` `  <= delete spaces here
+` ` `json
+{
+  "jsLib": [
+    "https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js",
+    "https://cdn.jsdelivr.net/npm/v-charts/lib/line.min.js"
+  ]
+}
+` ` `
 :::
 ```
 
@@ -197,7 +215,7 @@ export default  {
 </template>
 
 <script>
-export default  {
+export default {
   components: { VeLine: window.VeLine },
   data: function () {
     return {
@@ -216,5 +234,13 @@ export default  {
   }
 }
 </script>
+```
+```json
+{
+  "jsLib": [
+    "https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js",
+    "https://cdn.jsdelivr.net/npm/v-charts/lib/line.min.js"
+  ]
+}
 ```
 :::

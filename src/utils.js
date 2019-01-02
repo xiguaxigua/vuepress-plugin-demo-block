@@ -8,7 +8,7 @@ ${html}
 
 const getVueJsTpl = js => {
   const jsContent = js
-    .replace(/export default \{\n/, '')
+    .replace(/export default\s*?\{\n/, '')
     .replace(/\n}$/, '')
     .trim()
   return `new Vue({
@@ -89,7 +89,7 @@ export const getReactDetail = (code, config) => {
 
   const result = {
     js: scriptObj,
-    css: scriptObj.__style__,
+    css: scriptObj.__style__ || '',
     jsLib: config.jsLib || [],
     cssLib: config.cssLib || [],
     jsTpl: getReactTpl(code),
