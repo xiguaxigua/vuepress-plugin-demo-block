@@ -8,7 +8,7 @@ cd docs/.vuepress/dist
 
 git init
 git add -A
-git commit -m 'deploy'
+git commit -m 'deploy docs'
 
 git push -f git@github.com:xiguaxigua/vuepress-plugin-demo-block.git master:gh-pages
 
