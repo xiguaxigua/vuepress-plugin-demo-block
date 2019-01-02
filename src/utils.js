@@ -48,7 +48,7 @@ const getVueScript = (js, html) => {
   const scriptStr = window.Babel
     ? window.Babel.transform(scriptStrOrg, { presets: ['es2015'] }).code
     : scriptStrOrg
-  const scriptObj = eval(scriptStr)
+  const scriptObj = [eval][0](scriptStr)
   scriptObj.template = html
   return scriptObj
 }
@@ -77,7 +77,7 @@ const getReactTpl = code => {
     .replace('export default ', '')
     .replace(/App\.__style__(\s*)=(\s*)`([\s\S]*)?`/, '')
   code +=
-    ';ReactDOM.render(React.createElement(App), document.getElementById("app"))'
+    'ReactDOM.render(React.createElement(App), document.getElementById("app"))'
   return code
 }
 
