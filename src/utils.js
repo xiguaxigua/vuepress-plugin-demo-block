@@ -8,8 +8,8 @@ ${html}
 
 const getVueJsTpl = js => {
   const jsContent = js
-    .replace(/export default\s*?\{\n/, '')
-    .replace(/\n}$/, '')
+    .replace(/export\s+default\s*?\{\n*/, '')
+    .replace(/\n*\}\s*$/, '')
     .trim()
   return `new Vue({
   el: '#app',
@@ -43,7 +43,7 @@ export const $ = (parent, node, returnArray) => {
 }
 
 const getVueScript = (js, html) => {
-  const scripts = js.split('export default')
+  const scripts = js.split(/export\s+default/)
   const scriptStrOrg = `(function() {${scripts[0]} ; return ${scripts[1]}})()`
   const scriptStr = window.Babel
     ? window.Babel.transform(scriptStrOrg, { presets: ['es2015'] }).code
