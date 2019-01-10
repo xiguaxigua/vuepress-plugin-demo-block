@@ -1,22 +1,22 @@
 import {
-  h,
-  $,
-  injectCss,
-  getSettings,
-  getVueDetail,
-  getReactDetail
-} from './utils'
-import {
-  CLASS_WRAPPER,
+  CLASS_APP,
   CLASS_CODE,
+  CLASS_DISPLAY,
+  CLASS_EXPAND,
   CLASS_FOOTER,
   CLASS_SHOW_LINK,
-  CLASS_DISPLAY,
-  CLASS_APP,
-  CLASS_EXPAND
-} from './constants'
-import jsfiddle from './jsfiddle'
-import codepen from './codepen'
+  CLASS_WRAPPER
+} from './common/constants'
+import {
+  $,
+  getReactDetail,
+  getSettings,
+  getVueDetail,
+  h,
+  injectCss
+} from './common/utils'
+import codepen from './online/codepen'
+import jsfiddle from './online/jsfiddle'
 
 export default function webController() {
   const nodes = $(document, CLASS_WRAPPER, true)

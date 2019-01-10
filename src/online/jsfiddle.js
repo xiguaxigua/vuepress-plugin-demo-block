@@ -1,5 +1,5 @@
-import { CLASS_BUTTON, CLASS_JSFIDDLE } from './constants'
-import { getSettings, h } from './utils'
+import { CLASS_BUTTON, CLASS_JSFIDDLE } from '../common/constants'
+import { getSettings, h } from '../common/utils'
 export default function getJsfiddleBtn({ css, htmlTpl, jsTpl, jsLib, cssLib }) {
   const resource = jsLib
     .concat(cssLib)

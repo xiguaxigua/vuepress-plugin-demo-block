@@ -1,5 +1,6 @@
 import './style.less'
-import webController from './web-controller'
+
+import webController from './main'
 
 export default {
   mounted() {

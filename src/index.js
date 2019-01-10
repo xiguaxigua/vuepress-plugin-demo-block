@@ -1,12 +1,13 @@
 import path from 'path'
+
 import {
-  END_TYPE,
-  CLASS_WRAPPER,
-  CLASS_DISPLAY,
-  CLASS_CODE,
   CLASS_APP,
-  CLASS_FOOTER
-} from './constants'
+  CLASS_CODE,
+  CLASS_DISPLAY,
+  CLASS_FOOTER,
+  CLASS_WRAPPER,
+  END_TYPE
+} from './common/constants'
 
 module.exports = (options, context) => ({
   name: 'vuepress-plugin-demo-block',

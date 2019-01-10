@@ -1,5 +1,5 @@
-import { h, getSettings } from './utils'
-import { CLASS_CODEPEN, CLASS_BUTTON } from './constants'
+import { CLASS_BUTTON, CLASS_CODEPEN } from '../common/constants'
+import { getSettings, h } from '../common/utils'
 export default function getCodepenBtn({ css, htmlTpl, jsTpl, jsLib, cssLib }) {
   const value = JSON.stringify({
     css: css,
