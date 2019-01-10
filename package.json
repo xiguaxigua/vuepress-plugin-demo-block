@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
+    "comp": "rollup -c rollup.config.js",
     "watch": "rollup -wc rollup.config.js"
   },
   "repository": {
