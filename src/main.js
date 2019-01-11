@@ -2,6 +2,7 @@ import {
   CLASS_APP,
   CLASS_CODE,
   CLASS_DISPLAY,
+  CLASS_EDITOR,
   CLASS_EXPAND,
   CLASS_FOOTER,
   CLASS_SHOW_LINK,
@@ -27,6 +28,7 @@ export default function webController() {
       node.style.display = 'block'
 
       const codeNode = $(node, CLASS_CODE)
+      const editorNode = $(node, CLASS_EDITOR)
       const displayNode = $(node, CLASS_DISPLAY)
       const footerNode = $(node, CLASS_FOOTER)
       const appNode = $(displayNode, CLASS_APP)
@@ -36,6 +38,31 @@ export default function webController() {
       let type = decodeURIComponent(node.dataset.type)
       config = config ? JSON.parse(config) : {}
       const height = codeNode.querySelector('div').clientHeight
+
+      const myCodeMirror = CodeMirror(editorNode, {
+        value: code,
+        theme: 'material',
+        tabSize: 2,
+        lineNumbers: true,
+        mode: "xml"
+      });
+      let vm
+      myCodeMirror.on('changes', function (codeMir) {
+        console.log(codeMir.doc.getValue())
+        const code = codeMir.doc.getValue()
+        const detail = getVueDetail(code, config)
+        detail.css && injectCss(detail.css)
+        vm.$destroy();
+        console.log(appNode)
+        appNode.removeChild(vm.$el)
+        vm = new window.Vue(detail.script).$mount()
+        appNode.appendChild(vm.$el)
+        // setTimeout(_ => {
+        //   vm = new window.Vue(Object.assign({ el: appNode }, detail.script))
+        // }, 100)
+        // console.log(vm)
+      })
+
       const detail = type === 'react'
           ? getReactDetail(code, config)
           : type === 'vanilla'
@@ -57,7 +84,8 @@ export default function webController() {
       if (type === 'react') {
         ReactDOM.render(React.createElement(detail.js), appNode)
       } else if (type === 'vue') {
-        new window.Vue(Object.assign({ el: appNode }, detail.script))
+        vm = new window.Vue(detail.script).$mount()
+        appNode.appendChild(vm.$el)
       } else if (type === 'vanilla') {
         appNode.innerHTML = detail.html
         new Function(`return (function(){${detail.script}})()`)()

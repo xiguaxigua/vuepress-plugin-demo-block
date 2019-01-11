@@ -29,6 +29,8 @@
     "autoprefixer": "^9.4.3",
     "less": "^3.9.0",
     "markdown-it-container": "^2.0.0",
+    "monaco-editor": "^0.15.6",
+    "monaco-editor-webpack-plugin": "^1.7.0",
     "rollup": "^1.0.0",
     "rollup-plugin-babel": "^4.2.0",
     "rollup-plugin-commonjs": "^9.2.0",

@@ -3,7 +3,9 @@ import path from 'path'
 import {
   CLASS_APP,
   CLASS_CODE,
+  CLASS_CONTAINER,
   CLASS_DISPLAY,
+  CLASS_EDITOR,
   CLASS_FOOTER,
   CLASS_WRAPPER,
   END_TYPE
@@ -52,8 +54,11 @@ module.exports = (options, context) => ({
             data-config="${configStr}"
             data-type="${typeStr}"
             data-code="${codeStr}">
-              <div class="${CLASS_DISPLAY}">
-                <div class="${CLASS_APP}"></div>
+              <div class="${CLASS_CONTAINER}">
+                <div class="${CLASS_EDITOR}"></div>
+                <div class="${CLASS_DISPLAY}">
+                  <div class="${CLASS_APP}"></div>
+                </div>
               </div>
               <div class="${CLASS_CODE}">
         `

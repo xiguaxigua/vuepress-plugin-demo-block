@@ -10,7 +10,7 @@ A typical vue example is written in the following format:
 </template>
 <script>
 export default {
-  data: () => ({ message: 'Hello World' })
+  data: () => ({ message: 'Hello World!' })
 }
 </script>
 <style>

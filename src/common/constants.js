@@ -1,8 +1,10 @@
 export const END_TYPE = 'container_demo_close'
 
 export const CLASS_WRAPPER = 'vuepress-plugin-demo-block__wrapper'
+export const CLASS_CONTAINER = 'vuepress-plugin-demo-block__container'
 export const CLASS_DISPLAY = 'vuepress-plugin-demo-block__display'
 export const CLASS_CODE = 'vuepress-plugin-demo-block__code'
+export const CLASS_EDITOR = 'vuepress-plugin-demo-block__editor'
 export const CLASS_FOOTER = 'vuepress-plugin-demo-block__footer'
 
 export const CLASS_APP = 'vuepress-plugin-demo-block__app'

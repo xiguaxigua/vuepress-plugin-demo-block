@@ -21,9 +21,40 @@
     }
   }
 
-  .vuepress-plugin-demo-block__display {
-    padding: 20px;
+  .vuepress-plugin-demo-block__container {
+    white-space: nowrap;
     border-bottom: 1px solid #ebebeb;
+
+    > div {
+      display: inline-block;
+    }
+
+    .vuepress-plugin-demo-block__editor {
+      // width: 0;
+      width: 50%;
+      height: 100%;
+
+      .CodeMirror {
+        height: 100%;
+      }
+
+      pre {
+        line-height: normal;
+        padding: 0 4px;
+        margin: 0;
+        background-color: #000;
+        border-radius: 0;
+        overflow: visible;
+      }
+    }
+    .vuepress-plugin-demo-block__display {
+      width: 50%;
+      padding: 20px;
+      vertical-align: top;
+      box-sizing: border-box;
+      height: 100%;
+      overflow: auto;
+    }
   }
 
   .vuepress-plugin-demo-block__footer {
