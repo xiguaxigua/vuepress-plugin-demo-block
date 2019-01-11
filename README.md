@@ -8,11 +8,17 @@
 
 ## Introduction
 
-The Demo Block is used to help you add vue or react examples when writing a document. When writing component documentation, you usually need to add some related examples to the document. These examples can usually be implemented using JSFiddle or Codepen's Iframe, but the maintenance cost will be relatively high. You can quickly add examples by using Demo Block, and it is very convenient to modify.
+The Demo Block is used to help you add vue, react or native js examples when writing a document. When writing component documentation, you usually need to add some related examples to the document. These examples can usually be implemented using JSFiddle or Codepen's Iframe, but the maintenance cost will be relatively high. You can quickly add examples by using Demo Block, and it is very convenient to modify.
 
 > To show how to write the example, the three points used to mark the end of the code section are separated by spaces, and the spaces need to be removed when used.
 
 ![demo](./demo.png)
+
+## Feature
+
+- Elegant display code and examples
+- Support vue, react and native js
+- Support codepen and jsfiddle online demo
 
 ## Install
 
@@ -89,5 +95,26 @@ App.__style__ = `
   .box-react { color: red; }   
 `
 ` ` `  <= delete spaces here
+:::
+```
+
+### VanillaJs Demo
+
+```html
+::: demo [vanilla]
+```html
+<html>
+  <div id="vanilla-box"></div>
+</html>
+<script>
+  var box = document.getElementById('vanilla-box')
+  box.innerHTML = 'Hello World!'
+</script>
+<style>
+#vanilla-box {
+  color: red;
+}
+</style>
+` ` `
 :::
 ```
