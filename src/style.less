@@ -4,6 +4,10 @@
   border-radius: 4px;
   transition: all .2s;
 
+  div {
+    box-sizing: border-box;
+  }
+
   &:hover {
     box-shadow: 0 0 11px rgba(33,33,33,.2);
   }
@@ -68,11 +72,11 @@
     }
 
     form:nth-last-child(2) {
-      right: 60px;
+      right: 50px;
     }
 
     form:last-child {
-      right: 20px;
+      right: 10px;
     }
 
     .vuepress-plugin-demo-block__button {
@@ -83,7 +87,7 @@
       cursor: pointer;
       outline: none;
       margin: 0;
-      width: 34px;
+      width: 46px;
       position: relative;
   
       &:hover::before {
@@ -91,13 +95,13 @@
         white-space: nowrap;
         position: absolute;
         top: -30px;
-        right: 0;
+        left: 50%;
         color: #eee;
         line-height: 1;
         z-index: 1000;
         border-radius: 4px;
         padding: 6px;
-        transform: translateX(50%);
+        transform: translateX(-50%);
         background-color: rgba(0, 0, 0, .8)
       }
     
@@ -105,8 +109,9 @@
         content: '' !important;
         display: block;
         position: absolute;
-        right: 4px;
+        left: 50%;
         top: -5px;
+        transform: translateX(-50%);
         border: 5px solid transparent;
         border-top-color: rgba(0, 0, 0, .8);
       }
