@@ -26,7 +26,7 @@ The Demo Block is used to help you add vue, react or native js examples when wri
 
 Reference official document [Vuepress](https://vuepress.vuejs.org)
 
-### npm
+### install plugin
 
 ```
 npm i vuepress-plugin-demo-block --save-dev
