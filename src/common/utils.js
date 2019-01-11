@@ -58,6 +58,12 @@ const getVueScript = (js, html) => {
   return scriptObj
 }
 
+const getVanillaScript = js => {
+  return window.Babel
+    ? window.Babel.transform(js, { presets: ['es2015'] }).code
+    : js
+}
+
 export const getVueDetail = (code, config) => {
   const cssBlock = code.match(/<style>([\s\S]+)<\/style>/)
   const htmlBlock = code.match(/<template>([\s\S]+)<\/template>/)
@@ -74,6 +80,23 @@ export const getVueDetail = (code, config) => {
   result.script = getVueScript(result.js, result.html)
   const vueResource = getSettings('vue')
   result.jsLib.unshift(vueResource)
+  return result
+}
+
+export const getVanillaDetail = (code, config) => {
+  const cssBlock = code.match(/<style>([\s\S]+)<\/style>/)
+  const htmlBlock = code.match(/<html>([\s\S]+)<\/html>/)
+  const jsBlock = code.match(/<script>([\s\S]+)<\/script>/)
+  const result = {
+    css: cssBlock && cssBlock[1].replace(/^\n|\n$/g, ''),
+    html: htmlBlock && htmlBlock[1].replace(/^\n|\n$/g, ''),
+    js: jsBlock && jsBlock[1].replace(/^\n|\n$/g, ''),
+    jsLib: config.jsLib || [],
+    cssLib: config.cssLib || []
+  }
+  result.htmlTpl = result.html
+  result.jsTpl = result.js
+  result.script = getVanillaScript(result.js)
   return result
 }
 

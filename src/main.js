@@ -11,6 +11,7 @@ import {
   $,
   getReactDetail,
   getSettings,
+  getVanillaDetail,
   getVueDetail,
   h,
   injectCss
@@ -37,7 +38,9 @@ export default function webController() {
       const height = codeNode.querySelector('div').clientHeight
       const detail = type === 'react'
           ? getReactDetail(code, config)
-          : getVueDetail(code, config)
+          : type === 'vanilla'
+            ? getVanillaDetail(code, config)
+            : getVueDetail(code, config)
       const expandNode = createExpandNode()
       footerNode.appendChild(expandNode)
       expandNode.addEventListener(
@@ -53,8 +56,11 @@ export default function webController() {
       detail.css && injectCss(detail.css)
       if (type === 'react') {
         ReactDOM.render(React.createElement(detail.js), appNode)
-      } else {
+      } else if (type === 'vue') {
         new window.Vue(Object.assign({ el: appNode }, detail.script))
+      } else if (type === 'vanilla') {
+        appNode.innerHTML = detail.html
+        new Function(`return (function(){${detail.script}})()`)()
       }
       node.dataset.created = 'true'
     })

@@ -28,7 +28,11 @@ module.exports = (options, context) => ({
         }
         let codeStr = ''
         let configStr = ''
-        let typeStr = ~info.indexOf('react') ? 'react' : 'vue'
+        let typeStr = ~info.indexOf('react')
+          ? 'react'
+          : ~info.indexOf('vanilla')
+            ? 'vanilla'
+            : 'vue'
         for (let i = idx; i < tokens.length; i++) {
           const { type, content, info } = tokens[i]
           if (type === END_TYPE) break

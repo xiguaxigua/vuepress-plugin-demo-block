@@ -80,6 +80,7 @@ function genSidebarConfig (title) {
         '',
         'vue',
         'react',
+        'vanilla',
         'settings'
       ]
     }
