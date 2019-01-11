@@ -1,5 +1,6 @@
 import { CLASS_BUTTON, CLASS_JSFIDDLE } from '../common/constants'
 import { getSettings, h } from '../common/utils'
+import jsfiddleIcon from '../icons/jsfiddle.svg'
 export default function getJsfiddleBtn({ css, htmlTpl, jsTpl, jsLib, cssLib }) {
   const resource = jsLib
     .concat(cssLib)
@@ -44,7 +45,8 @@ export default function getJsfiddleBtn({ css, htmlTpl, jsTpl, jsLib, cssLib }) {
         attrs: {
           type: 'submit',
           className: CLASS_BUTTON,
-          innerHTML: 'JSFiddle'
+          innerHTML: jsfiddleIcon,
+          datatip: 'JSFiddle'
         }
       }
     ]

@@ -1,5 +1,6 @@
 import { CLASS_BUTTON, CLASS_CODEPEN } from '../common/constants'
 import { getSettings, h } from '../common/utils'
+import codepenIcon from '../icons/codepen.svg'
 export default function getCodepenBtn({ css, htmlTpl, jsTpl, jsLib, cssLib }) {
   const value = JSON.stringify({
     css: css,
@@ -28,8 +29,9 @@ export default function getCodepenBtn({ css, htmlTpl, jsTpl, jsLib, cssLib }) {
         tag: 'button',
         attrs: {
           type: 'submit',
-          innerHTML: 'Codepen',
-          className: CLASS_BUTTON
+          innerHTML: codepenIcon,
+          className: CLASS_BUTTON,
+          datatip: 'Codepen'
         }
       }
     ]

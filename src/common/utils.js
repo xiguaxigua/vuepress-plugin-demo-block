@@ -28,7 +28,12 @@ export const h = (tag, attrs, children) => {
   const node = document.createElement(tag)
   attrs &&
     Object.keys(attrs).forEach(key => {
-      node[key] = attrs[key]
+      if (!key.indexOf('data')) {
+        const k = key.replace('data', '')
+        node.dataset[k] = attrs[key]
+      } else {
+        node[key] = attrs[key]
+      }
     })
   children &&
     children.forEach(({ tag, attrs, children }) => {

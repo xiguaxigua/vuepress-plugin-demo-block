@@ -56,6 +56,10 @@
         border-top-color: #3eaf7c !important;
         border-bottom-color: #3eaf7c !important;
       }
+
+      svg {
+        fill: #3eaf7c !important;
+      }
     }
 
     .vuepress-plugin-demo-block__expand-text {
@@ -64,11 +68,11 @@
     }
 
     form:nth-last-child(2) {
-      right: 80px;
+      right: 60px;
     }
 
     form:last-child {
-      right: 10px;
+      right: 20px;
     }
 
     .vuepress-plugin-demo-block__button {
@@ -79,6 +83,39 @@
       cursor: pointer;
       outline: none;
       margin: 0;
+      width: 34px;
+      position: relative;
+  
+      &:hover::before {
+        content: attr(data-tip);
+        white-space: nowrap;
+        position: absolute;
+        top: -30px;
+        right: 0;
+        color: #eee;
+        line-height: 1;
+        z-index: 1000;
+        border-radius: 4px;
+        padding: 6px;
+        transform: translateX(50%);
+        background-color: rgba(0, 0, 0, .8)
+      }
+    
+      &:hover::after {
+        content: '' !important;
+        display: block;
+        position: absolute;
+        right: 4px;
+        top: -5px;
+        border: 5px solid transparent;
+        border-top-color: rgba(0, 0, 0, .8);
+      }
+
+      svg {
+        width: 34px;
+        height: 20px;
+        fill: #ccc;
+      }
     }
 
     .vuepress-plugin-demo-block__jsfiddle,

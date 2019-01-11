@@ -34,6 +34,7 @@
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-postcss": "^1.6.3",
+    "rollup-plugin-string": "^2.0.2",
     "rollup-plugin-uglify": "^6.0.0",
     "vuepress": "^1.0.0-alpha.30"
   }
