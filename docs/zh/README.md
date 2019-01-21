@@ -157,3 +157,59 @@ App.__style__ = `
 </style>
 ```
 :::
+
+### 横向展示示例
+
+```js
+::: demo [react]
+```js
+export default class App extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = { message: 'Hello World' }
+  }
+  render () {
+    return (
+      <div className="box-react">
+        React {this.state.message}
+      </div>
+    )
+  }
+}
+App.__style__ = `
+  .box-react { color: red; }   
+`
+` ` `  <= delete spaces here
+` ` `json
+{
+  "horizontal": true
+}
+` ` `
+:::
+```
+
+::: demo [react]
+```js
+export default class App extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = { message: 'Hello World' }
+  }
+  render () {
+    return (
+      <div className="box-react">
+        React {this.state.message}
+      </div>
+    )
+  }
+}
+App.__style__ = `
+  .box-react { color: red; }   
+`
+```
+```json
+{
+  "horizontal": true
+}
+```
+:::

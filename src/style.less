@@ -1,10 +1,45 @@
+@media (max-width: 1000px) {
+  .vuepress-plugin-demo-block__h_code {
+    display: none;
+  }
+  .vuepress-plugin-demo-block__app {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
 .vuepress-plugin-demo-block__wrapper {
   margin-top: 10px;
   border: 1px solid #ebebeb;
   border-radius: 4px;
   transition: all .2s;
 
-  .vuepress-plugin-demo-block__app {
+  &.vuepress-plugin-demo-block__horizontal {
+    .vuepress-plugin-demo-block__display {
+      height: 400px;
+      display: flex;
+
+      .vuepress-plugin-demo-block__app {
+        width: 300px;
+        border: 1px solid #ebebeb;
+        box-shadow: 1px 1px 3px #ebebeb;
+        margin-right: 5px;
+        overflow: auto;
+      }
+
+      .vuepress-plugin-demo-block__h_code {
+        flex: 1;
+        overflow: auto;
+        height: 100%;
+
+        > pre {
+          overflow: visible;
+        }
+      }
+    }
+  }
+
+  .vuepress-plugin-demo-block__display {
     max-height: 400px;
     overflow: auto;
   }

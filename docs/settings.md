@@ -15,7 +15,8 @@ plugins: [
       react: 'http://xxx', // react dependency in the online example (jsfiddle, codepen)
       reactDOM: 'http://xxx', // reactDOM dependency in the online example (jsfiddle, codepen)
       jsfiddle: true, // Whether to display the jsfiddle link
-      codepen: true // Whether to display the codepen link
+      codepen: true, // Whether to display the codepen link
+      horizontal: false // Whether to display horizontal view
     }
   }],
 }
@@ -41,7 +42,8 @@ export default {
 ` ` `json
 {
   jsLib: ['xxx'], // js dependency in the online example (jsfiddle, codepen)
-  cssLib: ['xxx'] // css dependency in the online example (jsfiddle, codepen)
+  cssLib: ['xxx'], // css dependency in the online example (jsfiddle, codepen)
+  horizontal: false // Whether to display horizontal view
 }
 ` ` `
 :::

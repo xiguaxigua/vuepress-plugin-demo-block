@@ -15,7 +15,8 @@ plugins: [
       react: 'http://xxx', // 在线示例中的react依赖
       reactDOM: 'http://xxx', // 在线示例中的reactDOM依赖
       jsfiddle: true, // 是否显示 jsfiddle 链接
-      codepen: true // 是否显示 codepen 链接
+      codepen: true, // 是否显示 codepen 链接
+      horizontal: false // 是否展示为横向样式
     }
   }],
 }
@@ -41,7 +42,8 @@ export default {
 ` ` `json
 {
   jsLib: ['xxx'], // 在线示例中的js依赖
-  cssLib: ['xxx'] // 在线示例中的css依赖
+  cssLib: ['xxx'], // 在线示例中的css依赖
+  horizontal: false // 是否展示为横向样式
 }
 ` ` `
 :::
