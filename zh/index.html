@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>简介 | Demo Block</title>
+    <meta name="description" content="用于编写 vue 或 react 示例的vuepress插件">
+    <script src="https://cdn.jsdelivr.net/npm/react@16.6.3/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@16.6.3/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/numerify/lib/index.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/v-charts/lib/line.min.js"></script>
+  <script src="https://www.googletagmanager.com/gtag/js?id=UA-122325348-1"></script>
+  <script src="/vuepress-plugin-demo-block/ga.js"></script>
+  <script src="/vuepress-plugin-demo-block/bt.js"></script>
+    
+    <link rel="preload" href="/vuepress-plugin-demo-block/assets/css/0.styles.adedd8bc.css" as="style"><link rel="preload" href="/vuepress-plugin-demo-block/assets/js/app.be09e735.js" as="script"><link rel="preload" href="/vuepress-plugin-demo-block/assets/js/2.f4d19e5f.js" as="script"><link rel="preload" href="/vuepress-plugin-demo-block/assets/js/10.6a2bd7c1.js" as="script"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/11.00e175e5.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/12.7564f098.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/13.d9bb9a1f.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/14.6e712eac.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/15.508c4862.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/3.950860cd.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/4.a1ffa067.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/5.7e6d62ec.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/6.f9bd4a8e.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/7.1e0a1907.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/8.eeb2b719.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/9.660c9375.js">
+    <link rel="stylesheet" href="/vuepress-plugin-demo-block/assets/css/0.styles.adedd8bc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress-plugin-demo-block/zh/" class="home-link router-link-exact-active router-link-active"><!----> <span class="site-name">Demo Block</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress-plugin-demo-block/" class="nav-link">English</a></li><li class="dropdown-item"><!----> <a href="/vuepress-plugin-demo-block/zh/" class="nav-link router-link-exact-active router-link-active">简体中文</a></li></ul></div></div> <a href="https://github.com/xiguaxigua/vuepress-plugin-demo-block" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress-plugin-demo-block/" class="nav-link">English</a></li><li class="dropdown-item"><!----> <a href="/vuepress-plugin-demo-block/zh/" class="nav-link router-link-exact-active router-link-active">简体中文</a></li></ul></div></div> <a href="https://github.com/xiguaxigua/vuepress-plugin-demo-block" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>指南</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/vuepress-plugin-demo-block/zh/" class="active sidebar-link">简介</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-plugin-demo-block/zh/#安装" class="sidebar-link">安装</a></li><li class="sidebar-sub-header"><a href="/vuepress-plugin-demo-block/zh/#开始使用" class="sidebar-link">开始使用</a></li></ul></li><li><a href="/vuepress-plugin-demo-block/zh/vue.html" class="sidebar-link">Vue示例</a></li><li><a href="/vuepress-plugin-demo-block/zh/react.html" class="sidebar-link">React示例</a></li><li><a href="/vuepress-plugin-demo-block/zh/vanilla.html" class="sidebar-link">Vanilla示例</a></li><li><a href="/vuepress-plugin-demo-block/zh/settings.html" class="sidebar-link">配置项</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content default"><h1 id="简介"><a href="#简介" aria-hidden="true" class="header-anchor">#</a> 简介</h1> <p>Demo Block 用于帮助你在编写文档时增加 vue ,react, 原生js 示例。在编写组件文档时，通常需要在文档上增加一些相关的示例，这些示例通常可以使用 JSFiddle 或 Codepen 的 Iframe 实现，但是维护成本会相对比较高，使用 Demo Block 可以快速的增加示例，并且可以很方便的修改。</p> <div class="tip custom-block"><p class="custom-block-title">TIP</p> <p>为了展示如何编写示例, 用于标记代码部分结束的三点增加了空格分隔，使用时需要将空格去除。</p></div> <h2 id="安装"><a href="#安装" aria-hidden="true" class="header-anchor">#</a> 安装</h2> <h3 id="安装-vuepress"><a href="#安装-vuepress" aria-hidden="true" class="header-anchor">#</a> 安装 vuepress</h3> <p>参考官方文档 <a href="https://vuepress.vuejs.org" target="_blank" rel="noopener noreferrer">Vuepress<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h3 id="安装插件"><a href="#安装插件" aria-hidden="true" class="header-anchor">#</a> 安装插件</h3> <div class="language- extra-class"><pre class="language-text"><code>npm i vuepress-plugin-demo-block
+</code></pre></div><h3 id="配置-vuepress-config"><a href="#配置-vuepress-config" aria-hidden="true" class="header-anchor">#</a> 配置 vuepress config</h3> <p>config.js</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  head<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token string">'script'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> src<span class="token punctuation">:</span> <span class="token string">'https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'script'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> src<span class="token punctuation">:</span> <span class="token string">'https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'script'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> src<span class="token punctuation">:</span> <span class="token string">'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'script'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> src<span class="token punctuation">:</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token string">'demo-block'</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="开始使用"><a href="#开始使用" aria-hidden="true" class="header-anchor">#</a> 开始使用</h2> <p>在 Markdown 文件中编写以下代码：</p> <h3 id="vue示例"><a href="#vue示例" aria-hidden="true" class="header-anchor">#</a> Vue示例</h3> <div class="language-html extra-class"><pre class="language-html"><code>::: demo
+```html
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>box-vue<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Vue {{ message }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> message<span class="token punctuation">:</span> <span class="token string">'Hello World'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token selector">.box-vue</span> <span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+` ` `  &lt;= 删除这里的空格
+:::
+</code></pre></div> <div data-config="" data-type="vue" data-code="%3Ctemplate%3E%0A%20%20%3Cdiv%20class%3D%22box-vue%22%3EVue%20%7B%7B%20message%20%7D%7D%3C%2Fdiv%3E%0A%3C%2Ftemplate%3E%0A%3Cscript%3E%0Aexport%20default%20%7B%0A%20%20data%3A%20()%20%3D%3E%20(%7B%20message%3A%20'Hello%20World'%20%7D)%0A%7D%0A%3C%2Fscript%3E%0A%3Cstyle%3E%0A.box-vue%20%7B%20color%3A%20red%3B%20%7D%0A%3C%2Fstyle%3E%0A" class="vuepress-plugin-demo-block__wrapper" style="display:none;"><div class="vuepress-plugin-demo-block__display"><div class="vuepress-plugin-demo-block__app"></div></div> <div class="vuepress-plugin-demo-block__code"><div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>box-vue<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Vue {{ message }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> message<span class="token punctuation">:</span> <span class="token string">'Hello World'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token selector">.box-vue</span> <span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <div class="vuepress-plugin-demo-block__footer"></div></div> <h3 id="react示例"><a href="#react示例" aria-hidden="true" class="header-anchor">#</a> React示例</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">:</span> demo react
+<span class="token template-string"><span class="token string">``</span></span><span class="token template-string"><span class="token string">`js
+export default class App extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = { message: 'Hello World' }
+  }
+  render () {
+    return (
+      &lt;div className=&quot;box-react&quot;&gt;
+        React {this.state.message}
+      &lt;/div&gt;
+    )
+  }
+}
+App.__style__ = `</span></span>
+  <span class="token punctuation">.</span>box<span class="token operator">-</span>react <span class="token punctuation">{</span> color<span class="token punctuation">:</span> red<span class="token punctuation">;</span> <span class="token punctuation">}</span>   
+<span class="token template-string"><span class="token string">`
+`</span></span> <span class="token template-string"><span class="token string">` `</span></span> <span class="token operator">&lt;=</span> 删除这里的空格
+<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">:</span>
+</code></pre></div> <div data-config="" data-type="react" data-code="export%20default%20class%20App%20extends%20React.Component%20%7B%0A%20%20constructor%20(props)%20%7B%0A%20%20%20%20super(props)%0A%20%20%20%20this.state%20%3D%20%7B%20message%3A%20'Hello%20World'%20%7D%0A%20%20%7D%0A%20%20render%20()%20%7B%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%3Cdiv%20className%3D%22box-react%22%3E%0A%20%20%20%20%20%20%20%20React%20%7Bthis.state.message%7D%0A%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20)%0A%20%20%7D%0A%7D%0AApp.__style__%20%3D%20%60%0A%20%20.box-react%20%7B%20color%3A%20red%3B%20%7D%20%20%20%0A%60%0A" class="vuepress-plugin-demo-block__wrapper" style="display:none;"><div class="vuepress-plugin-demo-block__display"><div class="vuepress-plugin-demo-block__app"></div></div> <div class="vuepress-plugin-demo-block__code"><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span> message<span class="token punctuation">:</span> <span class="token string">'Hello World'</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">render</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;box-react&quot;</span><span class="token operator">&gt;</span>
+        React <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>message<span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+App<span class="token punctuation">.</span>__style__ <span class="token operator">=</span> <span class="token template-string"><span class="token string">`
+  .box-react { color: red; }   
+`</span></span>
+</code></pre></div></div> <div class="vuepress-plugin-demo-block__footer"></div></div> <h3 id="原生js示例"><a href="#原生js示例" aria-hidden="true" class="header-anchor">#</a> 原生JS示例</h3> <div class="language-html extra-class"><pre class="language-html"><code>::: demo [vanilla]
+```html
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>vanilla-box<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  <span class="token keyword">var</span> box <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'vanilla-box'</span><span class="token punctuation">)</span>
+  box<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'Hello World!'</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token selector">#vanilla-box</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+` ` `
+:::
+</code></pre></div> <div data-config="" data-type="vanilla" data-code="%3Chtml%3E%0A%20%20%3Cdiv%20id%3D%22vanilla-box%22%3E%3C%2Fdiv%3E%0A%3C%2Fhtml%3E%0A%3Cscript%3E%0A%20%20var%20box%20%3D%20document.getElementById('vanilla-box')%0A%20%20box.innerHTML%20%3D%20'Hello%20World!'%0A%3C%2Fscript%3E%0A%3Cstyle%3E%0A%23vanilla-box%20%7B%0A%20%20color%3A%20red%3B%0A%7D%0A%3C%2Fstyle%3E%0A" class="vuepress-plugin-demo-block__wrapper" style="display:none;"><div class="vuepress-plugin-demo-block__display"><div class="vuepress-plugin-demo-block__app"></div></div> <div class="vuepress-plugin-demo-block__code"><div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>vanilla-box<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  <span class="token keyword">var</span> box <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'vanilla-box'</span><span class="token punctuation">)</span>
+  box<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'Hello World!'</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token selector">#vanilla-box</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <div class="vuepress-plugin-demo-block__footer"></div></div> <h3 id="横向展示示例"><a href="#横向展示示例" aria-hidden="true" class="header-anchor">#</a> 横向展示示例</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">:</span> demo <span class="token punctuation">[</span>react<span class="token punctuation">]</span>
+<span class="token template-string"><span class="token string">``</span></span><span class="token template-string"><span class="token string">`js
+export default class App extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = { message: 'Hello World' }
+  }
+  render () {
+    return (
+      &lt;div className=&quot;box-react&quot;&gt;
+        React {this.state.message}
+      &lt;/div&gt;
+    )
+  }
+}
+App.__style__ = `</span></span>
+  <span class="token punctuation">.</span>box<span class="token operator">-</span>react <span class="token punctuation">{</span> color<span class="token punctuation">:</span> red<span class="token punctuation">;</span> <span class="token punctuation">}</span>   
+<span class="token template-string"><span class="token string">`
+`</span></span> <span class="token template-string"><span class="token string">` `</span></span>  <span class="token operator">&lt;=</span> <span class="token keyword">delete</span> spaces here
+<span class="token template-string"><span class="token string">` `</span></span> <span class="token template-string"><span class="token string">`json
+{
+  &quot;horizontal&quot;: true
+}
+`</span></span> <span class="token template-string"><span class="token string">` `</span></span>
+<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">:</span>
+</code></pre></div> <div data-config="%7B%0A%20%20%22horizontal%22%3A%20true%0A%7D%0A" data-type="react" data-code="export%20default%20class%20App%20extends%20React.Component%20%7B%0A%20%20constructor%20(props)%20%7B%0A%20%20%20%20super(props)%0A%20%20%20%20this.state%20%3D%20%7B%20message%3A%20'Hello%20World'%20%7D%0A%20%20%7D%0A%20%20render%20()%20%7B%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%3Cdiv%20className%3D%22box-react%22%3E%0A%20%20%20%20%20%20%20%20React%20%7Bthis.state.message%7D%0A%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20)%0A%20%20%7D%0A%7D%0AApp.__style__%20%3D%20%60%0A%20%20.box-react%20%7B%20color%3A%20red%3B%20%7D%20%20%20%0A%60%0A" class="vuepress-plugin-demo-block__wrapper" style="display:none;"><div class="vuepress-plugin-demo-block__display"><div class="vuepress-plugin-demo-block__app"></div></div> <div class="vuepress-plugin-demo-block__code"><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span> message<span class="token punctuation">:</span> <span class="token string">'Hello World'</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">render</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;box-react&quot;</span><span class="token operator">&gt;</span>
+        React <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>message<span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+App<span class="token punctuation">.</span>__style__ <span class="token operator">=</span> <span class="token template-string"><span class="token string">`
+  .box-react { color: red; }   
+`</span></span>
+</code></pre></div><div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;horizontal&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <div class="vuepress-plugin-demo-block__footer"></div></div></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/xiguaxigua/vuepress-plugin-demo-block/edit/master/docs/zh/README.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">2019-1-21 16:15:26</span></div></div> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/vuepress-plugin-demo-block/zh/vue.html">
+          Vue示例
+        </a>
+        →
+      </span></p></div> </div></div><div class="global-ui"></div></div>
+    <script src="/vuepress-plugin-demo-block/assets/js/app.be09e735.js" defer></script><script src="/vuepress-plugin-demo-block/assets/js/2.f4d19e5f.js" defer></script><script src="/vuepress-plugin-demo-block/assets/js/10.6a2bd7c1.js" defer></script>
+  </body>
+</html>

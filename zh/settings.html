@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>配置项 | Demo Block</title>
+    <meta name="description" content="用于编写 vue 或 react 示例的vuepress插件">
+    <script src="https://cdn.jsdelivr.net/npm/react@16.6.3/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@16.6.3/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/numerify/lib/index.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/v-charts/lib/line.min.js"></script>
+  <script src="https://www.googletagmanager.com/gtag/js?id=UA-122325348-1"></script>
+  <script src="/vuepress-plugin-demo-block/ga.js"></script>
+  <script src="/vuepress-plugin-demo-block/bt.js"></script>
+    
+    <link rel="preload" href="/vuepress-plugin-demo-block/assets/css/0.styles.adedd8bc.css" as="style"><link rel="preload" href="/vuepress-plugin-demo-block/assets/js/app.be09e735.js" as="script"><link rel="preload" href="/vuepress-plugin-demo-block/assets/js/2.f4d19e5f.js" as="script"><link rel="preload" href="/vuepress-plugin-demo-block/assets/js/12.7564f098.js" as="script"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/10.6a2bd7c1.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/11.00e175e5.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/13.d9bb9a1f.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/14.6e712eac.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/15.508c4862.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/3.950860cd.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/4.a1ffa067.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/5.7e6d62ec.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/6.f9bd4a8e.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/7.1e0a1907.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/8.eeb2b719.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/9.660c9375.js">
+    <link rel="stylesheet" href="/vuepress-plugin-demo-block/assets/css/0.styles.adedd8bc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress-plugin-demo-block/zh/" class="home-link router-link-active"><!----> <span class="site-name">Demo Block</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress-plugin-demo-block/settings.html" class="nav-link">English</a></li><li class="dropdown-item"><!----> <a href="/vuepress-plugin-demo-block/zh/settings.html" class="nav-link router-link-exact-active router-link-active">简体中文</a></li></ul></div></div> <a href="https://github.com/xiguaxigua/vuepress-plugin-demo-block" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress-plugin-demo-block/settings.html" class="nav-link">English</a></li><li class="dropdown-item"><!----> <a href="/vuepress-plugin-demo-block/zh/settings.html" class="nav-link router-link-exact-active router-link-active">简体中文</a></li></ul></div></div> <a href="https://github.com/xiguaxigua/vuepress-plugin-demo-block" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>指南</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/vuepress-plugin-demo-block/zh/" class="sidebar-link">简介</a></li><li><a href="/vuepress-plugin-demo-block/zh/vue.html" class="sidebar-link">Vue示例</a></li><li><a href="/vuepress-plugin-demo-block/zh/react.html" class="sidebar-link">React示例</a></li><li><a href="/vuepress-plugin-demo-block/zh/vanilla.html" class="sidebar-link">Vanilla示例</a></li><li><a href="/vuepress-plugin-demo-block/zh/settings.html" class="active sidebar-link">配置项</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-plugin-demo-block/zh/settings.html#全局配置" class="sidebar-link">全局配置</a></li><li class="sidebar-sub-header"><a href="/vuepress-plugin-demo-block/zh/settings.html#组件配置" class="sidebar-link">组件配置</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content default"><h1 id="配置项"><a href="#配置项" aria-hidden="true" class="header-anchor">#</a> 配置项</h1> <p>插件的配置分为全局配置和组件配置，用于设置插件的样式以及跳转到 JSFiddle 或 Codepen 后代码的外部依赖。</p> <h2 id="全局配置"><a href="#全局配置" aria-hidden="true" class="header-anchor">#</a> 全局配置</h2> <p>config.js</p> <div class="language-js extra-class"><pre class="language-js"><code>plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">[</span><span class="token string">'demo-block'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    settings<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      jsLib<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'http://xxx'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 在线示例(jsfiddle, codepen)中的js依赖</span>
+      cssLib<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'http://xxx'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 在线示例中的css依赖</span>
+      vue<span class="token punctuation">:</span> <span class="token string">'http://xxx'</span><span class="token punctuation">,</span> <span class="token comment">// 在线示例中的vue依赖</span>
+      react<span class="token punctuation">:</span> <span class="token string">'http://xxx'</span><span class="token punctuation">,</span> <span class="token comment">// 在线示例中的react依赖</span>
+      reactDOM<span class="token punctuation">:</span> <span class="token string">'http://xxx'</span><span class="token punctuation">,</span> <span class="token comment">// 在线示例中的reactDOM依赖</span>
+      jsfiddle<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 是否显示 jsfiddle 链接</span>
+      codepen<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 是否显示 codepen 链接</span>
+      horizontal<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token comment">// 是否展示为横向样式</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="组件配置"><a href="#组件配置" aria-hidden="true" class="header-anchor">#</a> 组件配置</h2> <div class="language-html extra-class"><pre class="language-html"><code>::: demo
+```html
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>box-vue<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Vue {{ message }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> message<span class="token punctuation">:</span> <span class="token string">'Hello World'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token selector">.box-vue</span> <span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+` ` `
+` ` `json
+{
+  jsLib: ['xxx'], // 在线示例中的js依赖
+  cssLib: ['xxx'], // 在线示例中的css依赖
+  horizontal: false // 是否展示为横向样式
+}
+` ` `
+:::
+</code></pre></div></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/xiguaxigua/vuepress-plugin-demo-block/edit/master/docs/zh/settings.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">2019-1-21 16:15:26</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/vuepress-plugin-demo-block/zh/vanilla.html" class="prev">
+          Vanilla示例
+        </a></span> <!----></p></div> </div></div><div class="global-ui"></div></div>
+    <script src="/vuepress-plugin-demo-block/assets/js/app.be09e735.js" defer></script><script src="/vuepress-plugin-demo-block/assets/js/2.f4d19e5f.js" defer></script><script src="/vuepress-plugin-demo-block/assets/js/12.7564f098.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>React示例 | Demo Block</title>
+    <meta name="description" content="用于编写 vue 或 react 示例的vuepress插件">
+    <script src="https://cdn.jsdelivr.net/npm/react@16.6.3/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@16.6.3/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/numerify/lib/index.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/v-charts/lib/line.min.js"></script>
+  <script src="https://www.googletagmanager.com/gtag/js?id=UA-122325348-1"></script>
+  <script src="/vuepress-plugin-demo-block/ga.js"></script>
+  <script src="/vuepress-plugin-demo-block/bt.js"></script>
+    
+    <link rel="preload" href="/vuepress-plugin-demo-block/assets/css/0.styles.adedd8bc.css" as="style"><link rel="preload" href="/vuepress-plugin-demo-block/assets/js/app.be09e735.js" as="script"><link rel="preload" href="/vuepress-plugin-demo-block/assets/js/2.f4d19e5f.js" as="script"><link rel="preload" href="/vuepress-plugin-demo-block/assets/js/11.00e175e5.js" as="script"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/10.6a2bd7c1.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/12.7564f098.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/13.d9bb9a1f.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/14.6e712eac.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/15.508c4862.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/3.950860cd.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/4.a1ffa067.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/5.7e6d62ec.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/6.f9bd4a8e.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/7.1e0a1907.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/8.eeb2b719.js"><link rel="prefetch" href="/vuepress-plugin-demo-block/assets/js/9.660c9375.js">
+    <link rel="stylesheet" href="/vuepress-plugin-demo-block/assets/css/0.styles.adedd8bc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress-plugin-demo-block/zh/" class="home-link router-link-active"><!----> <span class="site-name">Demo Block</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress-plugin-demo-block/react.html" class="nav-link">English</a></li><li class="dropdown-item"><!----> <a href="/vuepress-plugin-demo-block/zh/react.html" class="nav-link router-link-exact-active router-link-active">简体中文</a></li></ul></div></div> <a href="https://github.com/xiguaxigua/vuepress-plugin-demo-block" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress-plugin-demo-block/react.html" class="nav-link">English</a></li><li class="dropdown-item"><!----> <a href="/vuepress-plugin-demo-block/zh/react.html" class="nav-link router-link-exact-active router-link-active">简体中文</a></li></ul></div></div> <a href="https://github.com/xiguaxigua/vuepress-plugin-demo-block" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>指南</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/vuepress-plugin-demo-block/zh/" class="sidebar-link">简介</a></li><li><a href="/vuepress-plugin-demo-block/zh/vue.html" class="sidebar-link">Vue示例</a></li><li><a href="/vuepress-plugin-demo-block/zh/react.html" class="active sidebar-link">React示例</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-plugin-demo-block/zh/react.html#示例" class="sidebar-link">示例</a></li><li class="sidebar-sub-header"><a href="/vuepress-plugin-demo-block/zh/react.html#使用其他库" class="sidebar-link">使用其他库</a></li></ul></li><li><a href="/vuepress-plugin-demo-block/zh/vanilla.html" class="sidebar-link">Vanilla示例</a></li><li><a href="/vuepress-plugin-demo-block/zh/settings.html" class="sidebar-link">配置项</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content default"><h1 id="react示例"><a href="#react示例" aria-hidden="true" class="header-anchor">#</a> React示例</h1> <p>一个典型的 react 示例编写格式如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">:</span> demo <span class="token punctuation">[</span>react<span class="token punctuation">]</span>
+<span class="token template-string"><span class="token string">``</span></span><span class="token template-string"><span class="token string">`js
+export default class App extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = { message: 'Hello World' }
+  }
+  render () {
+    return (
+      &lt;div className=&quot;box-react&quot;&gt;
+        React {this.state.message}
+      &lt;/div&gt;
+    )
+  }
+}
+App.__style__ = `</span></span>
+  <span class="token punctuation">.</span>box<span class="token operator">-</span>react <span class="token punctuation">{</span> color<span class="token punctuation">:</span> red<span class="token punctuation">;</span> <span class="token punctuation">}</span>   
+<span class="token template-string"><span class="token string">`
+`</span></span> <span class="token template-string"><span class="token string">` `</span></span>  <span class="token operator">&lt;=</span> <span class="token keyword">delete</span> spaces here
+<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">:</span>
+</code></pre></div><p>需要注意的是，为了解析的方便，代码中需要放回一个命名为 <code>App</code> 的 Class，<code>App.__style__</code>会被加到 <code>body</code> 上用于展示样式。</p> <h2 id="示例"><a href="#示例" aria-hidden="true" class="header-anchor">#</a> 示例</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">:</span> demo <span class="token punctuation">[</span>react<span class="token punctuation">]</span>
+<span class="token template-string"><span class="token string">``</span></span><span class="token template-string"><span class="token string">`js
+export default class App extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = { number: 0 }
+  }
+  plus () {
+    this.setState({ number: this.state.number + 1 })
+  }
+  minus () {
+    this.setState({ number: this.state.number - 1 })
+  }
+  render () {
+    return (
+      &lt;div className=&quot;box-react&quot;&gt;
+        &lt;button onClick={this.plus.bind(this)}&gt;+&lt;/button&gt;
+        &lt;button onClick={this.minus.bind(this)}&gt;-&lt;/button&gt;
+        {this.state.number}
+      &lt;/div&gt;
+    )
+  }
+}
+App.__style__ = `</span></span>
+  <span class="token punctuation">.</span>box<span class="token operator">-</span>react <span class="token punctuation">{</span> color<span class="token punctuation">:</span> red<span class="token punctuation">;</span> <span class="token punctuation">}</span>   
+<span class="token template-string"><span class="token string">`
+`</span></span> <span class="token template-string"><span class="token string">` `</span></span>  <span class="token operator">&lt;=</span> <span class="token keyword">delete</span> spaces here
+<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">:</span>
+</code></pre></div> <div data-config="" data-type="react" data-code="export%20default%20class%20App%20extends%20React.Component%20%7B%0A%20%20constructor%20(props)%20%7B%0A%20%20%20%20super(props)%0A%20%20%20%20this.state%20%3D%20%7B%20number%3A%200%20%7D%0A%20%20%7D%0A%20%20plus%20()%20%7B%0A%20%20%20%20this.setState(%7B%20number%3A%20this.state.number%20%2B%201%20%7D)%0A%20%20%7D%0A%20%20minus%20()%20%7B%0A%20%20%20%20this.setState(%7B%20number%3A%20this.state.number%20-%201%20%7D)%0A%20%20%7D%0A%20%20render%20()%20%7B%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%3Cdiv%20className%3D%22box-react%22%3E%0A%20%20%20%20%20%20%20%20%3Cbutton%20onClick%3D%7Bthis.plus.bind(this)%7D%3E%2B%3C%2Fbutton%3E%0A%20%20%20%20%20%20%20%20%3Cbutton%20onClick%3D%7Bthis.minus.bind(this)%7D%3E-%3C%2Fbutton%3E%0A%20%20%20%20%20%20%20%20%7Bthis.state.number%7D%0A%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20)%0A%20%20%7D%0A%7D%0AApp.__style__%20%3D%20%60%0A%20%20.box-react%20%7B%20color%3A%20red%3B%20%7D%20%20%20%0A%60%0A" class="vuepress-plugin-demo-block__wrapper" style="display:none;"><div class="vuepress-plugin-demo-block__display"><div class="vuepress-plugin-demo-block__app"></div></div> <div class="vuepress-plugin-demo-block__code"><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span> number<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">plus</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> number<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>number <span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">minus</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> number<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>number <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">render</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;box-react&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>plus<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">+</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>minus<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">-</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+        <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>number<span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+App<span class="token punctuation">.</span>__style__ <span class="token operator">=</span> <span class="token template-string"><span class="token string">`
+  .box-react { color: red; }   
+`</span></span>
+</code></pre></div></div> <div class="vuepress-plugin-demo-block__footer"></div></div> <h2 id="使用其他库"><a href="#使用其他库" aria-hidden="true" class="header-anchor">#</a> 使用其他库</h2> <p>在代码中如果要使用其他的库，可以引入对应库的 umd 文件到 config.js 中, 然后在代码里直接使用即可。为了能够在在线示例（JSFiddle, Codepen）中正常访问到资源，需要配置 jsLib或cssLib到组件配置或全局配置中（具体配置参考settings）。</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  head<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token string">'script'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> src<span class="token punctuation">:</span> <span class="token string">'https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'script'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> src<span class="token punctuation">:</span> <span class="token string">'https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'script'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> src<span class="token punctuation">:</span> <span class="token string">'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'script'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> src<span class="token punctuation">:</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'script'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> src<span class="token punctuation">:</span> <span class="token string">'https://cdn.jsdelivr.net/npm/numerify/lib/index.umd.min.js'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token string">'demo-block'</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">:</span> demo <span class="token punctuation">[</span>react<span class="token punctuation">]</span>
+<span class="token template-string"><span class="token string">``</span></span><span class="token template-string"><span class="token string">`js
+export default class App extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      form: { num: '123456.7000', format: '0,0.00[00]' },
+      result: '123,456.70'
+    }
+  }
+  formChangeHandler (e) {
+    const { name, value } = e.target
+    const changed = {}
+    changed[name] = value
+    const form = Object.assign({}, this.state.form, changed)
+    const result = window.numerify(form.num, form.format)
+    this.setState({ form, result })
+  }
+  render () {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;
+          &lt;span class=&quot;label&quot;&gt;number: &lt;/span&gt;
+          &lt;input
+            name=&quot;num&quot;
+            value={this.state.form.num}
+            onChange={this.formChangeHandler.bind(this)} /&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+           &lt;span class=&quot;label&quot;&gt;format: &lt;/span&gt;
+           &lt;input
+             name=&quot;format&quot;
+             value={this.state.form.format}
+             onChange={this.formChangeHandler.bind(this)} /&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+           &lt;span class=&quot;label&quot;&gt;result: &lt;/span&gt;
+           {this.state.result}
+        &lt;/p&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+`</span></span> <span class="token template-string"><span class="token string">` `</span></span>  <span class="token operator">&lt;=</span> <span class="token keyword">delete</span> spaces here
+<span class="token template-string"><span class="token string">` `</span></span> <span class="token template-string"><span class="token string">`json
+{
+  &quot;jsLib&quot;: [&quot;https://cdn.jsdelivr.net/npm/numerify/lib/index.umd.min.js&quot;]
+}
+`</span></span> <span class="token template-string"><span class="token string">` `</span></span>
+<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">:</span>
+</code></pre></div> <div data-config="%7B%0A%20%20%22jsLib%22%3A%20%5B%22https%3A%2F%2Fcdn.jsdelivr.net%2Fnpm%2Fnumerify%2Flib%2Findex.umd.min.js%22%5D%0A%7D%0A" data-type="react" data-code="export%20default%20class%20App%20extends%20React.Component%20%7B%0A%20%20constructor%20(props)%20%7B%0A%20%20%20%20super(props)%0A%20%20%20%20this.state%20%3D%20%7B%0A%20%20%20%20%20%20form%3A%20%7B%20num%3A%20'123456.7000'%2C%20format%3A%20'0%2C0.00%5B00%5D'%20%7D%2C%0A%20%20%20%20%20%20result%3A%20'123%2C456.70'%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20formChangeHandler%20(e)%20%7B%0A%20%20%20%20const%20%7B%20name%2C%20value%20%7D%20%3D%20e.target%0A%20%20%20%20const%20changed%20%3D%20%7B%7D%0A%20%20%20%20changed%5Bname%5D%20%3D%20value%0A%20%20%20%20const%20form%20%3D%20Object.assign(%7B%7D%2C%20this.state.form%2C%20changed)%0A%20%20%20%20const%20result%20%3D%20window.numerify(form.num%2C%20form.format)%0A%20%20%20%20this.setState(%7B%20form%2C%20result%20%7D)%0A%20%20%7D%0A%20%20render%20()%20%7B%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%3Cdiv%3E%0A%20%20%20%20%20%20%20%20%3Cp%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22label%22%3Enumber%3A%20%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cinput%0A%20%20%20%20%20%20%20%20%20%20%20%20name%3D%22num%22%0A%20%20%20%20%20%20%20%20%20%20%20%20value%3D%7Bthis.state.form.num%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20onChange%3D%7Bthis.formChangeHandler.bind(this)%7D%20%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fp%3E%0A%20%20%20%20%20%20%20%20%3Cp%3E%0A%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22label%22%3Eformat%3A%20%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20%20%20%3Cinput%0A%20%20%20%20%20%20%20%20%20%20%20%20%20name%3D%22format%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20value%3D%7Bthis.state.form.format%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20onChange%3D%7Bthis.formChangeHandler.bind(this)%7D%20%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fp%3E%0A%20%20%20%20%20%20%20%20%3Cp%3E%0A%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22label%22%3Eresult%3A%20%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20%20%20%7Bthis.state.result%7D%0A%20%20%20%20%20%20%20%20%3C%2Fp%3E%0A%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20)%0A%20%20%7D%0A%7D%0A" class="vuepress-plugin-demo-block__wrapper" style="display:none;"><div class="vuepress-plugin-demo-block__display"><div class="vuepress-plugin-demo-block__app"></div></div> <div class="vuepress-plugin-demo-block__code"><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      form<span class="token punctuation">:</span> <span class="token punctuation">{</span> num<span class="token punctuation">:</span> <span class="token string">'123456.7000'</span><span class="token punctuation">,</span> format<span class="token punctuation">:</span> <span class="token string">'0,0.00[00]'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      result<span class="token punctuation">:</span> <span class="token string">'123,456.70'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">formChangeHandler</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> value <span class="token punctuation">}</span> <span class="token operator">=</span> e<span class="token punctuation">.</span>target
+    <span class="token keyword">const</span> changed <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    changed<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> value
+    <span class="token keyword">const</span> form <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>form<span class="token punctuation">,</span> changed<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> result <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">numerify</span><span class="token punctuation">(</span>form<span class="token punctuation">.</span>num<span class="token punctuation">,</span> form<span class="token punctuation">.</span>format<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> form<span class="token punctuation">,</span> result <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">render</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;label&quot;</span><span class="token operator">&gt;</span>number<span class="token punctuation">:</span> <span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>input
+            name<span class="token operator">=</span><span class="token string">&quot;num&quot;</span>
+            value<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>form<span class="token punctuation">.</span>num<span class="token punctuation">}</span>
+            onChange<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>formChangeHandler<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>
+           <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;label&quot;</span><span class="token operator">&gt;</span>format<span class="token punctuation">:</span> <span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+           <span class="token operator">&lt;</span>input
+             name<span class="token operator">=</span><span class="token string">&quot;format&quot;</span>
+             value<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>form<span class="token punctuation">.</span>format<span class="token punctuation">}</span>
+             onChange<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>formChangeHandler<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>
+           <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;label&quot;</span><span class="token operator">&gt;</span>result<span class="token punctuation">:</span> <span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+           <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>result<span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;jsLib&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;https://cdn.jsdelivr.net/npm/numerify/lib/index.umd.min.js&quot;</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <div class="vuepress-plugin-demo-block__footer"></div></div></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/xiguaxigua/vuepress-plugin-demo-block/edit/master/docs/zh/react.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">2019-1-2 16:45:44</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/vuepress-plugin-demo-block/zh/vue.html" class="prev">
+          Vue示例
+        </a></span> <span class="next"><a href="/vuepress-plugin-demo-block/zh/vanilla.html">
+          Vanilla示例
+        </a>
+        →
+      </span></p></div> </div></div><div class="global-ui"></div></div>
+    <script src="/vuepress-plugin-demo-block/assets/js/app.be09e735.js" defer></script><script src="/vuepress-plugin-demo-block/assets/js/2.f4d19e5f.js" defer></script><script src="/vuepress-plugin-demo-block/assets/js/11.00e175e5.js" defer></script>
+  </body>
+</html>
