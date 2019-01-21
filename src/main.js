@@ -4,8 +4,10 @@ import {
   CLASS_DISPLAY,
   CLASS_EXPAND,
   CLASS_FOOTER,
+  CLASS_HORIZONTAL,
+  CLASS_H_CODE,
   CLASS_SHOW_LINK,
-  CLASS_WRAPPER
+  CLASS_WRAPPER,
 } from './common/constants'
 import {
   $,
@@ -53,11 +55,21 @@ export default function webController() {
       if (getSettings('codepen')) {
         footerNode.appendChild(codepen(detail))
       }
+
+      if (getSettings('horizontal') || config.horizontal) {
+        node.classList.add(CLASS_HORIZONTAL)
+        const hCodeNode = codeNode.firstChild.cloneNode(true)
+        hCodeNode.classList.add(CLASS_H_CODE)
+        displayNode.appendChild(hCodeNode)
+      }
+
       detail.css && injectCss(detail.css)
       if (type === 'react') {
         ReactDOM.render(React.createElement(detail.js), appNode)
       } else if (type === 'vue') {
-        new window.Vue(Object.assign({ el: appNode }, detail.script))
+        const Comp = Vue.extend(detail.script)
+        const app = new Comp().$mount()
+        appNode.appendChild(app.$el)
       } else if (type === 'vanilla') {
         appNode.innerHTML = detail.html
         new Function(`return (function(){${detail.script}})()`)()
