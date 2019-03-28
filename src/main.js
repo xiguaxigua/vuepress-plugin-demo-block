@@ -23,8 +23,13 @@ import jsfiddle from './online/jsfiddle';
 
 export default function webController() {
   const nodes = $(document, CLASS_WRAPPER, true);
-  nodes.length &&
-    nodes.forEach(node => {
+  if (!nodes.length) {
+    setTimeout(_ => {
+      webController()
+    }, 300)
+    return
+  }
+  nodes.forEach(node => {
       if (node.dataset.created === 'true') return;
       node.style.display = 'block';
 
