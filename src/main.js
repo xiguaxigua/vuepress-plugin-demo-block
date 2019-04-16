@@ -79,7 +79,9 @@ export default function webController() {
         appNode.appendChild(app.$el);
       } else if (type === 'vanilla') {
         appNode.innerHTML = detail.html;
-        new Function(`return (function(){${detail.script}})()`)();
+        const scr = document.createElement('script');
+        scr.innerHTML = detail.script;
+        appNode.appendChild(scr);
       }
       node.dataset.created = 'true';
     });
