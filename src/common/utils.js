@@ -71,7 +71,7 @@ export const getVueDetail = (code, config) => {
   const result = {
     css: cssBlock && cssBlock[1].replace(/^\n|\n$/g, ''),
     html: htmlBlock && htmlBlock[1].replace(/^\n|\n$/g, ''),
-    js: jsBlock && jsBlock[1].replace(/^\n|\n$/g, ''),
+    js: jsBlock && jsBlock[1] && jsBlock[1].replace(/^\n|\n$/g, '') || 'export default {}',
     jsLib: config.jsLib || [],
     cssLib: config.cssLib || []
   }
@@ -90,7 +90,7 @@ export const getVanillaDetail = (code, config) => {
   const result = {
     css: cssBlock && cssBlock[1].replace(/^\n|\n$/g, ''),
     html: htmlBlock && htmlBlock[1].replace(/^\n|\n$/g, ''),
-    js: jsBlock && jsBlock[1].replace(/^\n|\n$/g, ''),
+    js: jsBlock && jsBlock[1] && jsBlock[1].replace(/^\n|\n$/g, '') || 'export default {}',
     jsLib: config.jsLib || [],
     cssLib: config.cssLib || []
   }
