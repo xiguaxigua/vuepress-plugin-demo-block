@@ -118,3 +118,7 @@ App.__style__ = `
 ` ` `
 :::
 ```
+
+### Fixed
+
+* [feat: support ignore script tag](https://github.com/xiguaxigua/vuepress-plugin-demo-block/pull/23)

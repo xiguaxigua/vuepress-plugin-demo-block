@@ -7,7 +7,8 @@
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
     "comp": "rollup -c rollup.config.js",
-    "watch": "rollup -wc rollup.config.js"
+    "watch": "rollup -wc rollup.config.js",
+    "gh-pages": "gh-pages -d docs/.vuepress/dist"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "autoprefixer": "^9.4.5",
+    "gh-pages": "^2.2.0",
     "less": "^3.9.0",
     "markdown-it-container": "^2.0.0",
     "rollup": "^1.0.0",
