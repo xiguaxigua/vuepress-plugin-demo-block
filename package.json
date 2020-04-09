@@ -1,6 +1,6 @@
 {
-  "name": "vuepress-plugin-demo-block",
-  "version": "0.7.2",
+  "name": "vuepress-plugin-leo-demo-block",
+  "version": "0.1.0",
   "description": "demo block for vuepress both support vue and react",
   "main": "lib/index.js",
   "scripts": {
@@ -11,18 +11,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xiguaxigua/vuepress-plugin-demo-block.git"
+    "url": "git+https://github.com/lq782655835/vuepress-plugin-demo-block.git"
   },
   "keywords": [
     "vuepress-plugin",
     "demo-block"
   ],
-  "author": "xiguaxigua",
+  "author": "springleo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xiguaxigua/vuepress-plugin-demo-block/issues"
+    "url": "https://github.com/lq782655835/vuepress-plugin-demo-block/issues"
   },
-  "homepage": "https://github.com/xiguaxigua/vuepress-plugin-demo-block#readme",
+  "homepage": "https://github.com/lq782655835/vuepress-plugin-demo-block#readme",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",

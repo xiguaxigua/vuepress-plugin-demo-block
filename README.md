@@ -4,7 +4,7 @@
 [![version](https://img.shields.io/npm/v/vuepress-plugin-demo-block.svg)](https://www.npmjs.com/package/vuepress-plugin-demo-block)
 ![language](https://img.shields.io/badge/language-javascript-yellow.svg)
 ![License](https://img.shields.io/badge/license-MIT-000000.svg)
-[![](https://img.shields.io/circleci/project/github/xiguaxigua/vuepress-plugin-demo-block/master.svg)](https://circleci.com/gh/xiguaxigua/vuepress-plugin-demo-block)
+[![](https://img.shields.io/circleci/project/github/lq782655835/vuepress-plugin-demo-block/master.svg)](https://circleci.com/gh/lq782655835/vuepress-plugin-demo-block)
 
 ## Introduction
 
