@@ -1,7 +1,7 @@
 # vuepress-plugin-demo-block
 
-![download](https://img.shields.io/npm/dm/vuepress-plugin-demo-block.svg)
-[![version](https://img.shields.io/npm/v/vuepress-plugin-demo-block.svg)](https://www.npmjs.com/package/vuepress-plugin-demo-block)
+![download](https://img.shields.io/npm/dm/vuepress-plugin-leo-demo-block.svg)
+[![version](https://img.shields.io/npm/v/vuepress-plugin-leo-demo-block.svg)](https://www.npmjs.com/package/vuepress-plugin-leo-demo-block)
 ![language](https://img.shields.io/badge/language-javascript-yellow.svg)
 ![License](https://img.shields.io/badge/license-MIT-000000.svg)
 [![](https://img.shields.io/circleci/project/github/lq782655835/vuepress-plugin-demo-block/master.svg)](https://circleci.com/gh/lq782655835/vuepress-plugin-demo-block)
@@ -61,7 +61,7 @@ export default {
 <style>
 .box-vue { color: red; }
 </style>
-```
+\```
 :::
 ```
 
