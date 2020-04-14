@@ -29,7 +29,7 @@ Reference official document [Vuepress](https://vuepress.vuejs.org)
 ### install plugin
 
 ```
-npm i vuepress-plugin-demo-block --save-dev
+npm i vuepress-plugin-leo-demo-block --save-dev
 ```
 
 ### set vuepress config
@@ -37,17 +37,8 @@ npm i vuepress-plugin-demo-block --save-dev
 config.js
 ```js
 module.exports = {
-  head: [
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js' }],
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js' }],
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js' }],
-  ],
-  plugins: [
-    'demo-block'
-  ]
+  plugins: ['demo-block']
 }
-
 ```
 
 ## Start
@@ -70,55 +61,11 @@ export default {
 <style>
 .box-vue { color: red; }
 </style>
-` ` `  <= delete spaces here
-:::
 ```
-
-### React Demo
-```js
-::: demo [react]
-```js
-export default class App extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = { message: 'Hello World' }
-  }
-  render () {
-    return (
-      <div className="box-react">
-        React {this.state.message}
-      </div>
-    )
-  }
-}
-App.__style__ = `
-  .box-react { color: red; }   
-`
-` ` `  <= delete spaces here
-:::
-```
-
-### VanillaJs Demo
-
-```html
-::: demo [vanilla]
-```html
-<html>
-  <div id="vanilla-box"></div>
-</html>
-<script>
-  var box = document.getElementById('vanilla-box')
-  box.innerHTML = 'Hello World!'
-</script>
-<style>
-#vanilla-box {
-  color: red;
-}
-</style>
-` ` `
 :::
 ```
 
 ### Fixed
 
 * [feat: support ignore script tag](https://github.com/xiguaxigua/vuepress-plugin-demo-block/pull/23)
+* fix: auto import vue from vuepress

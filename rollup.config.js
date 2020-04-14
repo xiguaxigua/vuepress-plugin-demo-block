@@ -21,6 +21,7 @@ export default [
       file: "lib/clientRootMixin.js",
       format: "esm"
     },
+    external: ['vue'],
     plugins: [
       postcss({ plugins: [autoprefixer] }),
       babel(),

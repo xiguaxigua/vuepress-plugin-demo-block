@@ -14,6 +14,9 @@ module.exports = (options, context) => ({
   define: {
     SETTINGS: options.settings || {}
   },
+  chainWebpack(config) {
+    config.resolve.alias.set('vue', 'vue/dist/vue.common.js')
+  },
   clientRootMixin: path.resolve(__dirname, 'clientRootMixin.js'),
   extendMarkdown: md => {
     md.use(require('markdown-it-container'), 'demo', {

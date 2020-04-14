@@ -15,7 +15,7 @@ Reference official document [Vuepress](https://vuepress.vuejs.org)
 ### install plugin
 
 ```
-npm i vuepress-plugin-demo-block --save-dev
+npm i vuepress-plugin-leo-demo-block --save-dev
 ```
 
 ### set vuepress config
@@ -26,14 +26,16 @@ module.exports = {
   head: [
     ['script', { src: 'https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js' }],
     ['script', { src: 'https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js' }],
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
+    // ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
     ['script', { src: 'https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js' }],
   ],
-  plugins: [
-    'demo-block'
-  ]
+  plugins: [ 'demo-block' ]
 }
 ```
+
+:::tip
+auto import vue from vuepress，do not import vue again from head
+:::
 
 ## Start
 

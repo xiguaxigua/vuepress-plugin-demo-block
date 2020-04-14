@@ -15,7 +15,7 @@ Demo Block 用于帮助你在编写文档时增加 vue ,react, 原生js 示例�
 ### 安装插件
 
 ```
-npm i vuepress-plugin-demo-block
+npm i vuepress-plugin-leo-demo-block
 ```
 
 ### 配置 vuepress config
@@ -26,14 +26,16 @@ module.exports = {
   head: [
     ['script', { src: 'https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js' }],
     ['script', { src: 'https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js' }],
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
+    // ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
     ['script', { src: 'https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js' }],
   ],
-  plugins: [
-    'demo-block'
-  ]
+  plugins: ['demo-block']
 }
 ```
+
+:::tip
+vue自动引入自vuepress，不需要再手动引入
+:::
 
 ## 开始使用
 

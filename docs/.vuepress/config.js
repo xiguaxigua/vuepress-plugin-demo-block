@@ -54,7 +54,7 @@ module.exports = {
   head: [
     ['script', { src: 'https://cdn.jsdelivr.net/npm/react@16.6.3/umd/react.production.min.js' }],
     ['script', { src: 'https://cdn.jsdelivr.net/npm/react-dom@16.6.3/umd/react-dom.production.min.js' }],
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
+    // ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
     ['script', { src: 'https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js' }],
     ['script', { src: 'https://cdn.jsdelivr.net/npm/numerify/lib/index.umd.min.js' }],
     ['script', { src: 'https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js' }],
@@ -64,11 +64,7 @@ module.exports = {
     ['script', { src: '/bt.js' }],
   ],
   plugins: [
-    [require('../../lib/index.js'), {
-      settings: {
-        codepen: true
-      }
-    }]
+    require('../../lib/index.js')
   ]
 }
 function genSidebarConfig (title) {
