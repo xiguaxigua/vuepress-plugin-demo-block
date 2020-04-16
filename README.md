@@ -10,7 +10,7 @@
 
 ### 1. 易用性
 
-原版书写markdown，必需写template/script/style标签，不得省略。而在实际场景中缺省script标签是常有的场景，所以此处进行了默认处理。提的pr在这里：[feat: support ignore script tag](https://github.com/xiguaxigua/vuepress-plugin-demo-block/pull/23)
+原版书写markdown，必需写template/script/style标签，不得省略。而在实际场景中缺省script标签是常有的场景，所以此处进行了默认处理。提的pr在[这里](https://github.com/xiguaxigua/vuepress-plugin-demo-block/pull/23).
 
 ### 2. bugfix
 
