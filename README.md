@@ -2,9 +2,11 @@
 
 扩展markdown语法，可动态插件Vue代码，使得一边预览，一边查看源代码。特别适合配合VuePress框架进行组件库文档书写。
 
+该插件实际项目案例预览可看：[vuele - 基于ElementUI的业务组件库](https://lq782655835.github.io/vuele/)
+
 ## 介绍
 
-版本fork自[vuepress-plugin-demo-block](https://github.com/xiguaxigua/vuepress-plugin-demo-block)。跟原版比较，解决一些实际场景中遇到的bug以及易用性问题，主要表现在：
+版本fork自 [vuepress-plugin-demo-block](https://github.com/xiguaxigua/vuepress-plugin-demo-block)，跟原版比较，解决一些实际场景中遇到的bug以及易用性问题。主要表现在以下：
 
 ### 1. 易用性
 
