@@ -1,49 +1,35 @@
-# vuepress-plugin-demo-block
+# vuepress-plugin-leo-demo-block
 
-![download](https://img.shields.io/npm/dm/vuepress-plugin-leo-demo-block.svg)
-[![version](https://img.shields.io/npm/v/vuepress-plugin-leo-demo-block.svg)](https://www.npmjs.com/package/vuepress-plugin-leo-demo-block)
-![language](https://img.shields.io/badge/language-javascript-yellow.svg)
-![License](https://img.shields.io/badge/license-MIT-000000.svg)
-[![](https://img.shields.io/circleci/project/github/lq782655835/vuepress-plugin-demo-block/master.svg)](https://circleci.com/gh/lq782655835/vuepress-plugin-demo-block)
+扩展markdown语法，可动态插件Vue代码，使得一边预览，一边查看源代码。特别适合配合VuePress框架进行组件库文档书写。
 
-## Introduction
+## 介绍
 
-The Demo Block is used to help you add vue, react or native js examples when writing a document. When writing component documentation, you usually need to add some related examples to the document. These examples can usually be implemented using JSFiddle or Codepen's Iframe, but the maintenance cost will be relatively high. You can quickly add examples by using Demo Block, and it is very convenient to modify.
+版本fork自[vuepress-plugin-demo-block](https://github.com/xiguaxigua/vuepress-plugin-demo-block)。跟原版比较，解决一些实际场景中遇到的bug以及易用性问题，主要表现在：
 
-> To show how to write the example, the three points used to mark the end of the code section are separated by spaces, and the spaces need to be removed when used.
+### 1. 易用性
 
-![demo](./demo.png)
+原版书写markdown，必需写template/script/style标签，不得省略。而在实际场景中缺省script标签是常有的场景，所以此处进行了默认处理。提的pr在这里：[feat: support ignore script tag](https://github.com/xiguaxigua/vuepress-plugin-demo-block/pull/23)
 
-## Feature
+### 2. bugfix
 
-- Elegant display code and examples
-- Support vue, react and native js
-- Support codepen and jsfiddle online demo
+原版本需要引入额外的vue包，配合其他vuepress插件/主题时会报错，表现不正常（这是fork的主要原因），故此该版本解决这些问题，同时在基础上进行丰富。
 
-## Install
-
-### install vuepress
-
-Reference official document [Vuepress](https://vuepress.vuejs.org)
-
-### install plugin
+## 安装
 
 ```
-npm i vuepress-plugin-leo-demo-block --save-dev
+npm i vuepress-plugin-leo-demo-block -D
 ```
 
-### set vuepress config
+## 使用
 
-config.js
+在项目.vuepress/config.js中加入以下配置：
 ```js
 module.exports = {
   plugins: ['demo-block']
 }
 ```
 
-## Start
-
-Write the following code in the Markdown file:
+接着就可以扩展markdown语法了：
 
 ### Vue Demo
 
@@ -65,7 +51,7 @@ export default {
 :::
 ```
 
-### Fixed
+## 预览
 
-* [feat: support ignore script tag](https://github.com/xiguaxigua/vuepress-plugin-demo-block/pull/23)
-* fix: auto import vue from vuepress
+![image](https://user-images.githubusercontent.com/6310131/79427654-9b74e380-7ff7-11ea-83f5-d4af5e3c3aed.png)
+
