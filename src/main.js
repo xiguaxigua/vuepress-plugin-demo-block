@@ -20,6 +20,7 @@ import {
 } from './common/utils';
 import codepen from './online/codepen';
 import jsfiddle from './online/jsfiddle';
+import Vue from 'vue'
 
 export default function webController() {
   const nodes = $(document, CLASS_WRAPPER, true);

@@ -1,58 +1,37 @@
-# vuepress-plugin-demo-block
+# vuepress-plugin-leo-demo-block
 
-![download](https://img.shields.io/npm/dm/vuepress-plugin-demo-block.svg)
-[![version](https://img.shields.io/npm/v/vuepress-plugin-demo-block.svg)](https://www.npmjs.com/package/vuepress-plugin-demo-block)
-![language](https://img.shields.io/badge/language-javascript-yellow.svg)
-![License](https://img.shields.io/badge/license-MIT-000000.svg)
-[![](https://img.shields.io/circleci/project/github/xiguaxigua/vuepress-plugin-demo-block/master.svg)](https://circleci.com/gh/xiguaxigua/vuepress-plugin-demo-block)
+扩展markdown语法，可动态插件Vue代码，使得一边预览，一边查看源代码。特别适合配合VuePress框架进行组件库文档书写。
 
-## Introduction
+该插件实际项目案例预览可看：[vuele - 基于ElementUI的业务组件库](https://lq782655835.github.io/vuele/)
 
-The Demo Block is used to help you add vue, react or native js examples when writing a document. When writing component documentation, you usually need to add some related examples to the document. These examples can usually be implemented using JSFiddle or Codepen's Iframe, but the maintenance cost will be relatively high. You can quickly add examples by using Demo Block, and it is very convenient to modify.
+## 介绍
 
-> To show how to write the example, the three points used to mark the end of the code section are separated by spaces, and the spaces need to be removed when used.
+版本fork自 [vuepress-plugin-demo-block](https://github.com/xiguaxigua/vuepress-plugin-demo-block)，跟原版比较，解决一些实际场景中遇到的bug以及易用性问题。主要表现在以下：
 
-![demo](./demo.png)
+### 1. 易用性
 
-## Feature
+原版书写markdown，必需写template/script/style标签，不得省略。而在实际场景中缺省script标签是常有的场景，所以此处进行了默认处理。提的pr在[这里](https://github.com/xiguaxigua/vuepress-plugin-demo-block/pull/23).
 
-- Elegant display code and examples
-- Support vue, react and native js
-- Support codepen and jsfiddle online demo
+### 2. bugfix
 
-## Install
+原版本需要引入额外的vue包，配合其他vuepress插件/主题时会报错，表现不正常（这是fork的主要原因），故此该版本解决这些问题，同时在基础上进行丰富。
 
-### install vuepress
-
-Reference official document [Vuepress](https://vuepress.vuejs.org)
-
-### install plugin
+## 安装
 
 ```
-npm i vuepress-plugin-demo-block --save-dev
+npm i vuepress-plugin-leo-demo-block -D
 ```
 
-### set vuepress config
+## 使用
 
-config.js
+在项目.vuepress/config.js中加入以下配置：
 ```js
 module.exports = {
-  head: [
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js' }],
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js' }],
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js' }],
-  ],
-  plugins: [
-    'demo-block'
-  ]
+  plugins: ['leo-demo-block']
 }
-
 ```
 
-## Start
-
-Write the following code in the Markdown file:
+接着就可以扩展markdown语法了：
 
 ### Vue Demo
 
@@ -70,51 +49,11 @@ export default {
 <style>
 .box-vue { color: red; }
 </style>
-` ` `  <= delete spaces here
+\```
 :::
 ```
 
-### React Demo
-```js
-::: demo [react]
-```js
-export default class App extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = { message: 'Hello World' }
-  }
-  render () {
-    return (
-      <div className="box-react">
-        React {this.state.message}
-      </div>
-    )
-  }
-}
-App.__style__ = `
-  .box-react { color: red; }   
-`
-` ` `  <= delete spaces here
-:::
-```
+## 预览
 
-### VanillaJs Demo
+![image](https://user-images.githubusercontent.com/6310131/79427654-9b74e380-7ff7-11ea-83f5-d4af5e3c3aed.png)
 
-```html
-::: demo [vanilla]
-```html
-<html>
-  <div id="vanilla-box"></div>
-</html>
-<script>
-  var box = document.getElementById('vanilla-box')
-  box.innerHTML = 'Hello World!'
-</script>
-<style>
-#vanilla-box {
-  color: red;
-}
-</style>
-` ` `
-:::
-```

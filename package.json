@@ -1,32 +1,34 @@
 {
-  "name": "vuepress-plugin-demo-block",
-  "version": "0.7.2",
+  "name": "vuepress-plugin-leo-demo-block",
+  "version": "0.1.1",
   "description": "demo block for vuepress both support vue and react",
   "main": "lib/index.js",
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
     "comp": "rollup -c rollup.config.js",
-    "watch": "rollup -wc rollup.config.js"
+    "watch": "rollup -wc rollup.config.js",
+    "gh-pages": "npm run build && gh-pages -d docs/.vuepress/dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xiguaxigua/vuepress-plugin-demo-block.git"
+    "url": "git+https://github.com/lq782655835/vuepress-plugin-demo-block.git"
   },
   "keywords": [
     "vuepress-plugin",
     "demo-block"
   ],
-  "author": "xiguaxigua",
+  "author": "springleo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xiguaxigua/vuepress-plugin-demo-block/issues"
+    "url": "https://github.com/lq782655835/vuepress-plugin-demo-block/issues"
   },
-  "homepage": "https://github.com/xiguaxigua/vuepress-plugin-demo-block#readme",
+  "homepage": "https://github.com/lq782655835/vuepress-plugin-demo-block#readme",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "autoprefixer": "^9.4.5",
+    "gh-pages": "^2.2.0",
     "less": "^3.9.0",
     "markdown-it-container": "^2.0.0",
     "rollup": "^1.0.0",
