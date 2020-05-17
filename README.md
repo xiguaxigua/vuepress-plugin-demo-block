@@ -27,7 +27,7 @@ npm i vuepress-plugin-leo-demo-block -D
 在项目.vuepress/config.js中加入以下配置：
 ```js
 module.exports = {
-  plugins: ['demo-block']
+  plugins: ['leo-demo-block']
 }
 ```
 
