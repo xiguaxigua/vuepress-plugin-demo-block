@@ -131,9 +131,31 @@ export const getReactDetail = (code, config) => {
   return result
 }
 
-export const injectCss = css => {
+export const injectCss = (css, dom = document.body) => {
   if (_once[css]) return
   const style = h('style', { innerHTML: css })
-  document.body.appendChild(style)
+  dom.appendChild(style)
   _once[css] = true
 }
+
+export const injectCssList = (cssURLList, target = document.head) => {
+  if(!Array.isArray(cssURLList)) {
+    return;
+  }
+  cssURLList.forEach(src => {
+    const link = h('link', { type: 'text/css', rel:"stylsheet", href: src });
+    target.appendChild(link);
+  });
+}
+
+export const injectJSList = (jsURLList, target = document.head) => {
+  if(!Array.isArray(jsURLList)) {
+    return;
+  }
+  jsURLList.forEach(src => {
+    const script = h('script', { type: "application/javascript", src });
+    target.appendChild(script);
+  });
+}
+
+export const noop = () => undefined
