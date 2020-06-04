@@ -131,11 +131,15 @@ export const getReactDetail = (code, config) => {
   return result
 }
 
-export const injectCss = (css, dom = document.body) => {
+export const injectCss = (css) => {
   if (_once[css]) return
+  injectCssInto(css, document.body);
+  _once[css] = true
+}
+
+export const injectCssInto = (css, dom = document.head) => {
   const style = h('style', { innerHTML: css })
   dom.appendChild(style)
-  _once[css] = true
 }
 
 export const injectCssList = (cssURLList, target = document.head) => {
@@ -143,7 +147,7 @@ export const injectCssList = (cssURLList, target = document.head) => {
     return;
   }
   cssURLList.forEach(src => {
-    const link = h('link', { type: 'text/css', rel:"stylsheet", href: src });
+    const link = h('link', { type: 'text/css', rel:"stylesheet", href: src });
     target.appendChild(link);
   });
 }
@@ -152,10 +156,15 @@ export const injectJSList = (jsURLList, target = document.head) => {
   if(!Array.isArray(jsURLList)) {
     return;
   }
-  jsURLList.forEach(src => {
+  const promises = jsURLList.map(src => {
     const script = h('script', { type: "application/javascript", src });
-    target.appendChild(script);
+    return new Promise((resolve, reject) => {
+      script.onload = resolve;
+      script.onerror = reject;
+      target.appendChild(script);
+    });
   });
+  return Promise.all(promises);
 }
 
 export const noop = () => undefined

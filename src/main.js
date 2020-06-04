@@ -20,6 +20,7 @@ import {
   noop,
   injectCssList,
   injectJSList,
+  injectCssInto,
 } from './common/utils';
 import codepen from './online/codepen';
 import jsfiddle from './online/jsfiddle';
@@ -87,7 +88,9 @@ export default function webController() {
           onload = noop,
           injectCss: cssURLList = [],
           injectScript: jsURLList = [],
-          injectCssText = ''
+          injectCssText = '',
+          autorun = true,
+          runCodeBtn,
         } = iframeOptions || {};
 
         const iframe = document.createElement('iframe');
@@ -101,28 +104,65 @@ export default function webController() {
         appNode.appendChild(iframe);
 
         const idom = iframe.contentDocument;
-        injectCss(`
-          html.body {margin: 0;padding: 0;}
-        `, idom.head);
-        injectCssText && injectCss(injectCssText, idom.head);
-        injectCssList(cssURLList, idom.head);
-        injectJSList(jsURLList, idom.head);
+        const runcode = async () => {
+          injectCss(`
+            html,body {margin: 0;padding: 0;}
+          `, idom.head);
+          injectCssText && injectCssInto(injectCssText, idom.head);
+          injectCssList(cssURLList, idom.head);
+          await injectJSList(jsURLList, idom.head);
 
-        detail.css && injectCss(detail.css, idom.head);
-        if (type === 'react') {
-          ReactDOM.render(React.createElement(detail.js), idom.body);
-        } else if (type === 'vue') {
-          const Comp = Vue.extend(detail.script);
-          const app = new Comp().$mount();
-          idom.body.appendChild(app.$el);
-        } else if (type === 'vanilla') {
-          idom.body.innerHTML = detail.html;
-          if(detail.script) {
-            const script = idom.createElement('script');
-            script.type = 'text/javascript';
-            script.textContent = detail.script;
-            idom.head.appendChild(script);
+          detail.css && injectCssInto(detail.css, idom.head);
+          if (type === 'react') {
+            ReactDOM.render(React.createElement(detail.js), idom.body);
+          } else if (type === 'vue') {
+            const Comp = Vue.extend(detail.script);
+            const app = new Comp().$mount();
+            idom.body.appendChild(app.$el);
+          } else if (type === 'vanilla') {
+            idom.body.innerHTML = detail.html;
+            if(detail.script) {
+              const script = idom.createElement('script');
+              script.type = 'text/javascript';
+              script.textContent = detail.script;
+              idom.head.appendChild(script);
+            }
           }
+        }
+        if(autorun) {
+          runcode();
+        } else {
+          const btn = h('button', Object.assign({
+            innerText: 'run'
+          }, runCodeBtn || {}));
+          btn.classList.add('vuepress-plugin-demo-block__previewer-iframe-run-code-btn')
+          idom.body.appendChild(btn);
+          injectCssInto(`
+            .vuepress-plugin-demo-block__previewer-iframe-run-code-btn {
+              right: 6px;
+              border-radius: 2px;
+              color: #000;
+              outline: none;
+              display: inline-block;
+              *display: block;
+              *zoom: 1;
+              position: fixed;
+              padding: 4px 6px;
+              border: 1px solid #ddd;
+              background-color: #eff3f6;
+              background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+            }
+            .vuepress-plugin-demo-block__previewer-iframe-run-code-btn:hover {
+              background-color: #e6ebf1;
+              background-image: linear-gradient(-180deg,#f0f3f6,#e5e9ec 90%);
+            }
+          `, idom.head);
+          btn.addEventListener('click', () => {
+            idom.body.removeChild(btn);
+            runcode();
+          }, {
+            once: true
+          })
         }
       } else {
         detail.css && injectCss(detail.css);
