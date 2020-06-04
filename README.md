@@ -56,7 +56,7 @@ Write the following code in the Markdown file:
 
 ### Vue Demo
 
-```html
+````html
 ::: demo
 ```html
 <template>
@@ -70,12 +70,12 @@ export default {
 <style>
 .box-vue { color: red; }
 </style>
-` ` `  <= delete spaces here
-:::
 ```
+:::
+````
 
 ### React Demo
-```js
+````js
 ::: demo [react]
 ```js
 export default class App extends React.Component {
@@ -94,13 +94,13 @@ export default class App extends React.Component {
 App.__style__ = `
   .box-react { color: red; }   
 `
-` ` `  <= delete spaces here
-:::
 ```
+:::
+````
 
 ### VanillaJs Demo
 
-```html
+````html
 ::: demo [vanilla]
 ```html
 <html>
@@ -115,6 +115,6 @@ App.__style__ = `
   color: red;
 }
 </style>
-` ` `
-:::
 ```
+:::
+````
