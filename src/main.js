@@ -81,7 +81,7 @@ export default function webController() {
 
       const isolated = config.iframe === undefined ? !!getSettings('iframe') : !!config.iframe;
       if(isolated) {
-        const iframeOptions = Object.assign({}, config.iframeOptions || {}, getSettings('iframeOptions') || {});
+        const iframeOptions = Object.assign({}, getSettings('iframeOptions') || {}, config.iframeOptions || {});
         
         const {
           style = '',
