@@ -37,5 +37,8 @@
     "rollup-plugin-string": "^2.0.2",
     "rollup-plugin-uglify": "^6.0.0",
     "vuepress": "^1.0.0-alpha.30"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
