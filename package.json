@@ -1,5 +1,5 @@
 {
-  "name": "vuepress-plugin-demo-block",
+  "name": "@vgerbot/vuepress-plugin-demo-block",
   "version": "0.7.2",
   "description": "demo block for vuepress both support vue and react",
   "main": "lib/index.js",
