@@ -108,8 +108,8 @@ export default function webController() {
           injectCss(`
             html,body {margin: 0;padding: 0;}
           `, idom.head);
-          injectCssText && injectCssInto(injectCssText, idom.head);
           injectCssList(cssURLList, idom.head);
+          injectCssText && injectCssInto(injectCssText, idom.head);
           await injectJSList(jsURLList, idom.head);
 
           detail.css && injectCssInto(detail.css, idom.head);
