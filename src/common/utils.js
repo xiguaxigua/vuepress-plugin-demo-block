@@ -136,6 +136,13 @@ export const injectCss = (css) => {
   injectCssInto(css, document.body);
   _once[css] = true
 }
+export const injectJs = (code, dom = document.head) => {
+  const script = h('script', {
+    type: 'application/javascript',
+    innerText: code
+  });
+  dom.appendChild(script);
+}
 
 export const injectCssInto = (css, dom = document.head) => {
   const style = h('style', { innerHTML: css })
