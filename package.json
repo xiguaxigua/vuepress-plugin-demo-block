@@ -1,6 +1,6 @@
 {
   "name": "@vgerbot/vuepress-plugin-demo-block",
-  "version": "0.8.0-alpha4",
+  "version": "0.8.1",
   "description": "demo block for vuepress both support vue and react",
   "main": "lib/index.js",
   "scripts": {

@@ -14,6 +14,8 @@ The Demo Block is used to help you add vue, react or native js examples when wri
 
 ![demo](./demo.png)
 
+> This version adds delayed loading and injection of source code
+
 ## Feature
 
 - Elegant display code and examples
