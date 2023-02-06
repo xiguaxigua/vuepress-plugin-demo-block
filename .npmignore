@@ -7,3 +7,4 @@ yarn.lock
 demo.png
 deploy.sh
 .babelrc
+.circleci

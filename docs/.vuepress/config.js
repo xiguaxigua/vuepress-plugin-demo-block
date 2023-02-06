@@ -66,7 +66,17 @@ module.exports = {
   plugins: [
     [require('../../lib/index.js'), {
       settings: {
-        codepen: true
+        codepen: true,
+        iframe: true,
+        iframeOptions: {
+          autorun: false,
+          runcodeBtn: '',
+          beforeRun: {
+            injectCss: `
+              body { color: green; }
+            `
+          }
+        }
       }
     }]
   ]

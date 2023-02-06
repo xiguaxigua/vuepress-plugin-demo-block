@@ -17,6 +17,10 @@ import {
   getVueDetail,
   h,
   injectCss,
+  noop,
+  injectCssList,
+  injectJSList,
+  injectCssInto, injectJs
 } from './common/utils';
 import codepen from './online/codepen';
 import jsfiddle from './online/jsfiddle';
@@ -75,17 +79,117 @@ export default function webController() {
         displayNode.appendChild(hCodeNode);
       }
 
-      detail.css && injectCss(detail.css);
-      if (type === 'react') {
-        ReactDOM.render(React.createElement(detail.js), appNode);
-      } else if (type === 'vue') {
-        const Comp = Vue.extend(detail.script);
-        const app = new Comp().$mount();
-        appNode.appendChild(app.$el);
-      } else if (type === 'vanilla') {
-        appNode.innerHTML = detail.html;
-        new Function(`return (function(){${detail.script}})()`)();
+      const isolated = config.iframe === undefined ? !!getSettings('iframe') : !!config.iframe;
+      if(isolated) {
+        const iframeOptions = Object.assign({}, getSettings('iframeOptions') || {}, config.iframeOptions || {});
+        
+        const {
+          style = '',
+          onload = noop,
+          injectCss: cssURLList = [],
+          injectScript: jsURLList = [],
+          injectCssText = '',
+          autorun = true,
+          runCodeBtn,
+          beforeRun = {}
+        } = iframeOptions || {};
+        const {injectCss: beforeRun_injectCss, injectJs: beforeRun_injectJs } = beforeRun;
+
+        const iframe = document.createElement('iframe');
+        iframe.classList.add('vuepress-plugin-demo-block__previewer-iframe')
+        if(style) {
+          iframe.style.cssText = style;
+        }
+        
+
+        const runcode = async () => {
+          const idom = iframe.contentDocument;
+          injectCss(`
+            html,body {margin: 0;padding: 0;}
+          `, idom.head);
+          injectCssList(cssURLList, idom.head);
+          injectCssText && injectCssInto(injectCssText, idom.head);
+          await injectJSList(jsURLList, idom.head);
+
+          detail.css && injectCssInto(detail.css, idom.head);
+          if (type === 'react') {
+            ReactDOM.render(React.createElement(detail.js), idom.body);
+          } else if (type === 'vue') {
+            const Comp = Vue.extend(detail.script);
+            const app = new Comp().$mount();
+            idom.body.appendChild(app.$el);
+          } else if (type === 'vanilla') {
+            idom.body.innerHTML = detail.html;
+            if(detail.script) {
+              const script = idom.createElement('script');
+              script.type = 'text/javascript';
+              script.textContent = detail.script;
+              idom.head.appendChild(script);
+            }
+          }
+        }
+        iframe.onload = (e) => {
+          const idom = iframe.contentDocument;
+          if(typeof onload === 'function') {
+            onload.call(this, e);
+          }
+          if(autorun) {
+            runcode();
+          } else {
+            const btn = h('button', Object.assign({
+              innerText: 'run'
+            }, runCodeBtn || {}));
+            btn.classList.add('vuepress-plugin-demo-block__previewer-iframe-run-code-btn')
+            idom.body.appendChild(btn);
+            injectCssInto(`
+              .vuepress-plugin-demo-block__previewer-iframe-run-code-btn {
+                right: 6px;
+                border-radius: 2px;
+                color: #000;
+                outline: none;
+                display: inline-block;
+                *display: block;
+                *zoom: 1;
+                position: fixed;
+                padding: 4px 6px;
+                border: 1px solid #ddd;
+                background-color: #eff3f6;
+                background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+              }
+              .vuepress-plugin-demo-block__previewer-iframe-run-code-btn:hover {
+                background-color: #e6ebf1;
+                background-image: linear-gradient(-180deg,#f0f3f6,#e5e9ec 90%);
+              }
+            `, idom.head);
+            if(beforeRun_injectCss) {
+              injectCssInto(beforeRun_injectCss, idom.head);
+            }
+            if(beforeRun_injectJs) {
+              injectJs(beforeRun_injectJs, idom.head);
+            }
+            btn.addEventListener('click', () => {
+              idom.body.removeChild(btn);
+              runcode();
+            }, {
+              once: true
+            })
+          }
+        };
+        appNode.appendChild(iframe);
+      } else {
+        detail.css && injectCss(detail.css);
+        if (type === 'react') {
+          ReactDOM.render(React.createElement(detail.js), appNode);
+        } else if (type === 'vue') {
+          const Comp = Vue.extend(detail.script);
+          const app = new Comp().$mount();
+          appNode.appendChild(app.$el);
+        } else if (type === 'vanilla') {
+          appNode.innerHTML = detail.html;
+          new Function(`return (function(){${detail.script}})()`)();
+        }
       }
+
       node.dataset.created = 'true';
     });
 }

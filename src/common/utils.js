@@ -131,9 +131,76 @@ export const getReactDetail = (code, config) => {
   return result
 }
 
-export const injectCss = css => {
+export const injectCss = (css) => {
   if (_once[css]) return
-  const style = h('style', { innerHTML: css })
-  document.body.appendChild(style)
+  injectCssInto(css, document.body);
   _once[css] = true
 }
+export const injectJs = (code, dom = document.head) => {
+  const script = h('script', {
+    type: 'application/javascript',
+    innerText: code
+  });
+  dom.appendChild(script);
+}
+
+export const injectCssInto = (css, dom = document.head) => {
+  const style = h('style', { innerHTML: css })
+  dom.appendChild(style)
+}
+
+export const injectCssList = (cssURLList, target = document.head) => {
+  if(!Array.isArray(cssURLList)) {
+    return;
+  }
+  cssURLList.forEach(it => {
+    if(typeof it === 'string') {
+      injectCssURL(it, target);
+    } else if(!!it && typeof it === 'object') {
+      if(it.src || it.href) {
+        injectCssURL(it.src || it.href, target);
+      } else if(it.code || it.css) {
+        injectCssInto(it.code || it.css, target);
+      }
+    }
+  });
+}
+
+function injectCssURL(src, target) {
+  const link = h('link', { type: 'text/css', rel:"stylesheet", href: src });
+  target.appendChild(link);
+}
+
+export const injectJSList = (jsURLList, target = document.head) => {
+  if(!Array.isArray(jsURLList)) {
+    return;
+  }
+  const promises = jsURLList.map(it => {
+    if(typeof it === 'string') {
+      return injectJsURL(it, target);
+    } else if(!!it && typeof it === 'object') {
+      if(it.src) {
+        return injectJsURL(it.src, target);
+      }
+      if(it.code) {
+        return injectJsCode(it.code, target);
+      }
+    }
+  });
+  return Promise.all(promises);
+}
+function injectJsCode(code, target) {
+  const script = h('script', { type: 'application/javascript' });
+  script.innerText = code;
+  target.appendChild(script);
+  return Promise.resolve();
+}
+function injectJsURL(src, target) {
+  const script = h('script', { type: "application/javascript", src });
+  return new Promise((resolve, reject) => {
+    script.onload = resolve;
+    script.onerror = reject;
+    target.appendChild(script);
+  });
+}
+export const noop = () => undefined
